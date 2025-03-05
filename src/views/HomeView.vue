@@ -1,10 +1,20 @@
 <script setup></script>
 
-<template></template>
+<template>
+  <div id="app">
+    <TheHeader />
+    <TheMain>
+      <!-- Home page content sections -->
+      <HeroBanner />
+      <FeatureGrid />
+      <ServiceSlider />
+      <PromotionBanner />
+      <TestimonialSlider />
+      <PartnerSlider />
+      <HighlightSection />
+    </TheMain>
+    <TheFooter />
+  </div>
+</template>
 
-<style scoped>
-.red {
-  color: red;
-  background-color: red;
-}
-</style>
+<style scoped></style>
