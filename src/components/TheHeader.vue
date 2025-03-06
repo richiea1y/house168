@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="logo-container">
-      <img src="@/assets/images/HOUSE168 LOGO03.png" alt="house168 logo" />
+      <img src="@/assets/images/Logo.png" alt="house168 logo" />
     </div>
     <div class="nav-links">
       <div
