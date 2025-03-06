@@ -14,8 +14,7 @@ import TheHeader from '@/components/layout/TheHeader.vue';
 <template>
   <div id="app">
     <TheHeader />
-    <TheMain>
-      <!-- Home page content sections -->
+    <!-- <TheMain>
       <HeroBanner />
       <FeatureGrid />
       <ServiceSlider />
@@ -24,6 +23,10 @@ import TheHeader from '@/components/layout/TheHeader.vue';
       <PartnerSlider />
       <HighlightSection />
     </TheMain>
-    <TheFooter />
+    <TheFooter /> -->
   </div>
 </template>
+
+<style lang="scss" scoped>
+@use '@/styles/components/_navbar.scss';
+</style>
