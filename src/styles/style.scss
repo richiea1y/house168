@@ -7,6 +7,9 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 #app {
@@ -14,5 +17,15 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
   color: #3c3c3c;
+  position: relative;
+}
+
+/* Apply border-box to all elements for more predictable layouts */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

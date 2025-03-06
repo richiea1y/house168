@@ -12,8 +12,8 @@
           <button class="slogan-btn2">168房屋銷售網</button>
         </div>
       </div>
-      <div class="content1-vedio-conatiner">
-        <div class="vedio-container">
+      <div class="content1-video-container">
+        <div class="video-container">
           <img src="@/assets/images/hero-img.jpg" alt="hero-img" />
           <div class="play-btn-container">
             <img src="@/assets/images/icon/play-btn.svg" alt="play-btn" />
