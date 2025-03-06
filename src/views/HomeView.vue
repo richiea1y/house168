@@ -1,7 +1,6 @@
 <script setup>
 import TheHeader from '@/components/TheHeader.vue';
 import TheHero from '@/components/TheHero.vue';
-// import TheMain from '@/components/TheMain.vue';
 // import TheFooter from '@/components/TheFooter.vue';
 // import FeatureGrid from '@/components/FeatureGrid.vue';
 // import ServiceSlider from '@/components/ServiceSlider.vue';
@@ -15,14 +14,12 @@ import TheHero from '@/components/TheHero.vue';
   <div id="app">
     <TheHeader />
     <TheHero />
-    <!-- <TheMain>
-      <FeatureGrid />
-      <ServiceSlider />
-      <PromotionBanner />
-      <TestimonialSlider />
-      <PartnerSlider />
-      <HighlightSection />
-    </TheMain>
+    <!-- <FeatureGrid />
+    <ServiceSlider />
+    <PromotionBanner />
+    <TestimonialSlider />
+    <PartnerSlider />
+    <HighlightSection />
     <TheFooter /> -->
   </div>
 </template>
