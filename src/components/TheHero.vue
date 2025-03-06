@@ -4,8 +4,8 @@
       <div class="content1-slogan-container">
         <div class="content1-slogan-text">
           <p>專業，安心，信任！</p>
-          <img src="@/assets/images/Logo.png" alt="Logo" />
-          <p>助您業績增長的最佳夥伴！</p>
+          <img src="@/assets/images/icon/slogan-logo.svg" alt="Logo" />
+          <p>助您業績成長的最佳夥伴！</p>
         </div>
         <div class="content1-slogan-btn">
           <button class="slogan-btn1">瀏覽強大工具</button>
