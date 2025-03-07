@@ -4,10 +4,8 @@ import TheHero from '@/components/TheHero.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
 import PromotionBanner from '@/components/PromotionBanner.vue';
 import TestimonialSlider from '@/components/TestimonialSlider.vue';
-// import ServiceSlider from '@/components/ServiceSlider.vue';
+import HighlightSection from '@/components/HighlightSection.vue';
 import TheFooter from '@/components/TheFooter.vue';
-// import PartnerSlider from '@/components/PartnerSlider.vue';
-// import HighlightSection from '@/components/HighlightSection.vue';
 </script>
 
 <template>
@@ -16,10 +14,8 @@ import TheFooter from '@/components/TheFooter.vue';
     <TheHero />
     <FeatureGrid />
     <PromotionBanner />
-    <!-- <ServiceSlider /> -->
     <TestimonialSlider />
-    <!-- <PartnerSlider /> -->
-    <!-- <HighlightSection /> -->
+    <HighlightSection />
     <TheFooter />
   </div>
 </template>

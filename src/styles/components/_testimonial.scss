@@ -3,6 +3,7 @@
   padding: 40px 0 60px;
   overflow: hidden;
   position: relative;
+  background-color: #EFEFEF;
 }
 
 .testimonial-header {
@@ -181,7 +182,7 @@
 }
 
 .agent-icon-marquee {
-  margin-top: 40px;
+  margin-top: 60px;
   overflow: hidden;
   width: 100%;  // Ensure it takes up the container’s width
   
@@ -197,7 +198,7 @@
     }
     
     img.agent-icon {
-      height: 50px; // Adjust to your needs
+      height: 50px;
       // margin-right: 20px; // Or use the SCSS `gap` above
     }
   }

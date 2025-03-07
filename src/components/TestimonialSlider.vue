@@ -5,15 +5,18 @@
     </div>
     <div class="slider-container">
       <swiper
-        :modules="[SwiperNavigation, SwiperPagination, SwiperAutoplay]"
+        :modules="[SwiperNavigation, SwiperPagination]"
         :slides-per-view="1"
+        :slides-per-group="1"
         :breakpoints="{
           768: {
             slidesPerView: 2,
+            slidesPerGroup: 1,
             spaceBetween: 20
           },
           1024: {
             slidesPerView: 3,
+            slidesPerGroup: 1,
             spaceBetween: 50
           }
         }"
