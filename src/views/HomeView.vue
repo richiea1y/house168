@@ -14,13 +14,13 @@ import TheHero from '@/components/TheHero.vue';
   <div id="app">
     <TheHeader />
     <TheHero />
-    <!-- <FeatureGrid />
-    <ServiceSlider />
-    <PromotionBanner />
-    <TestimonialSlider />
-    <PartnerSlider />
-    <HighlightSection />
-    <TheFooter /> -->
+    <FeatureGrid />
+    <!-- <ServiceSlider /> -->
+    <!-- <PromotionBanner /> -->
+    <!-- <TestimonialSlider /> -->
+    <!-- <PartnerSlider /> -->
+    <!-- <HighlightSection /> -->
+    <!-- <TheFooter /> -->
   </div>
 </template>
 
