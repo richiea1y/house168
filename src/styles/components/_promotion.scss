@@ -1,0 +1,220 @@
+.promotion-banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background-color: #fff9f5; // Lighter background color to match image
+  border-radius: 8px;
+  width: 100%;
+  min-height: 240px; // Increased height to match image
+  border-bottom: 1px solid #eee;
+  
+  // Decorative elements
+  .decoration {
+    position: absolute;
+    z-index: 1;
+    
+    &.coin-1 {
+      top: 25%;
+      left: 30%;
+      height: 15%;
+      z-index: 3;
+    }
+    
+    &.coin-2 {
+      top: 10%;
+      left: 36%;
+      height: 10.5%;
+      z-index: 3;
+    }
+    
+    &.coin-3 {
+      top: 35%;
+      left: 38%;
+      height: 11%;
+      z-index: 3;
+    }
+    
+    &.coin-4 {
+      top: 18%;
+      left: 42%;
+      height: 9%;
+      z-index: 3;
+    }
+    
+    &.coin-5 {
+      top: 12%;
+      left: 93%;
+      height: 10.5%;
+      z-index: 3;
+    }
+    
+    &.coin-6 {
+      top: 45%;
+      right: 0%;
+      height: 90%;
+    }
+    
+    &.triangle-1 {
+      top: 22%;
+      right: 45%;
+      height: 30px;
+      transform: rotate(188deg);
+    }
+    
+    &.triangle-2 {
+      top: 16%;
+      right: 44%;
+      height: 45px;
+      transform: rotate(188deg);
+    }
+
+    &.triangle-3 {
+      bottom: 30%;
+      right: 16%;
+      height: 33px;
+      transform: rotate(25deg);
+    }
+
+    &.triangle-4 {
+      bottom: 35%;
+      right: 15%;
+      height: 45px;
+      transform: rotate(-18deg);
+    }
+    &.wave-1 {
+      bottom: 40%;
+      right: 43%;
+      height: 15px;
+      transform: rotate(-8deg);
+    }
+    &.wave-2 {
+      bottom: 37%;
+      right: 42.7%;
+      height: 18px;
+      transform: rotate(-8deg);
+    }
+    &.wave-3 {
+      top: 19%;
+      right: 12%;
+      height: 23px;
+      transform: rotate(155deg);
+    }
+    &.wave-4 {
+      top: 23%;
+      right: 11.5%;
+      height: 26px;
+      transform: rotate(175deg);
+    }   
+  }
+  
+
+  .promotion-left {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .shopping-illustration {
+      max-width: 100%;
+      height: auto;
+      max-height: 700px; // Larger illustration
+    }
+  }
+
+  .promotion-right {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    .promotion-subtitle {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    
+    .promotion-title {
+      font-size: 5rem;
+      font-weight: 900;
+      margin: 0.5rem 0 1rem;
+      color: #0091FF; // Brighter blue to match image
+      line-height: 1;
+    }
+    
+    .promotion-description {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-top: 0;
+      margin-bottom: 3rem;
+      color: #333;
+    }
+    
+    .promotion-button {
+      background-color: white;
+      color: #0091FF;
+      border: 3.4px solid #0091FF;
+      border-radius: 25px;
+      padding: 0.6rem 2.2rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #0091FF;
+        color: white;
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+    
+    .promotion-left, .promotion-right {
+      flex: 0 0 100%;
+    }
+    
+    .promotion-left {
+      margin-bottom: 1rem;
+      
+      .shopping-illustration {
+        max-height: 150px;
+      }
+    }
+    
+    .promotion-right {
+      align-items: center;
+      text-align: center;
+      
+      .promotion-title {
+        font-size: 3rem;
+      }
+    }
+    
+    // Adjust decorative elements for mobile
+    .decoration {
+      &.coin-1, &.coin-2, &.coin-3, &.coin-4 {
+        width: 20px;
+        height: 20px;
+      }
+      
+      &.triangle-1, &.triangle-2 {
+        width: 20px;
+      }
+      
+      &.wave-1 {
+        width: 20px;
+      }
+    }
+  }
+}
