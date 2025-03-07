@@ -1,10 +1,10 @@
 <script setup>
 import TheHeader from '@/components/TheHeader.vue';
 import TheHero from '@/components/TheHero.vue';
-// import TheFooter from '@/components/TheFooter.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
+import PromotionBanner from '@/components/PromotionBanner.vue';
 // import ServiceSlider from '@/components/ServiceSlider.vue';
-// import PromotionBanner from '@/components/PromotionBanner.vue';
+import TheFooter from '@/components/TheFooter.vue';
 // import TestimonialSlider from '@/components/TestimonialSlider.vue';
 // import PartnerSlider from '@/components/PartnerSlider.vue';
 // import HighlightSection from '@/components/HighlightSection.vue';
@@ -15,12 +15,12 @@ import FeatureGrid from '@/components/FeatureGrid.vue';
     <TheHeader />
     <TheHero />
     <FeatureGrid />
+    <PromotionBanner />
     <!-- <ServiceSlider /> -->
-    <!-- <PromotionBanner /> -->
     <!-- <TestimonialSlider /> -->
     <!-- <PartnerSlider /> -->
     <!-- <HighlightSection /> -->
-    <!-- <TheFooter /> -->
+    <TheFooter />
   </div>
 </template>
 
