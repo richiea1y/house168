@@ -107,7 +107,6 @@
         width: 16px;
       }
     }
-    
 
     p {
       color: #000;
@@ -117,13 +116,6 @@
     }
   }
 }
-
-
-
-
-
-
-
 
 .testimonial-author-name {
   color: #0085ff;
@@ -185,5 +177,38 @@
   
   .testimonial-author-position {
     font-size: 12px;
+  }
+}
+
+.agent-icon-marquee {
+  margin-top: 40px;
+  overflow: hidden;
+  width: 100%;  // Ensure it takes up the container’s width
+  
+  .marquee-content {
+    display: flex;
+    // Enough horizontal padding to create spacing between images, or use margin on <img>
+    gap: 20px; 
+    animation: scroll-marquee 30s linear infinite;
+    
+    // Pause on hover (optional)
+    &:hover {
+      animation-play-state: paused;
+    }
+    
+    img.agent-icon {
+      height: 50px; // Adjust to your needs
+      // margin-right: 20px; // Or use the SCSS `gap` above
+    }
+  }
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    // Move left by 50% so that the second set of images becomes visible
+    transform: translateX(-50%);
   }
 }
