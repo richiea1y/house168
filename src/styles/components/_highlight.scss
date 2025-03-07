@@ -185,3 +185,119 @@
     }
   }
 }
+
+// Add responsive styles for screens smaller than 430px
+@media (max-width: 430px) {
+  .highlight-section {
+    margin: 40px 0;
+    gap: 40px;
+    
+    .highlight-header {
+      padding: 0 20px;
+      h2 {
+        font-size: 20px;
+        margin: 20px 0;
+      }
+      p {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+    
+    .highlight-items {
+      gap: 50px;
+    }
+  }
+  
+  .highlight-item1 {
+    flex-direction: column;
+    margin-left: 0;
+    max-width: 80%;
+    border-radius: 40px 15px 40px 15px;
+    
+    .step-flag1 {
+      font-size: 18px;
+      padding: 8px 30px;
+      border-radius: 80px 0px 90px 0px;
+    }
+    
+    .highlight-item1-image {
+      width: 100%;
+      border-radius: 40px 15px 0 0;
+      padding: 15px;
+      
+      .interior-image {
+        width: 120px;
+      }
+      
+      img:nth-child(2) {
+        width: 30px;
+        height: auto;
+      }
+    }
+    
+    .highlight-item1-content {
+      padding: 20px;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      
+      .highlight-item1-title {
+        font-size: 18px;
+      }
+      
+      .highlight-item1-description {
+        font-size: 14px;
+        margin: 10px 0;
+      }
+      
+      .highlight-item1-button {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+  }
+  
+  .highlight-item2 {
+    flex-direction: column;
+    margin-right: 0;
+    max-width: 80%;
+    border-radius: 40px 15px 40px 15px;
+    
+    .step-flag2 {
+      font-size: 18px;
+      padding: 8px 30px;
+      border-radius: 80px 0px 90px 0px;
+    }
+    
+    .highlight-item2-image {
+      width: 100%;
+      border-radius: 40px 15px 0 0;
+      padding: 15px;
+      
+      .website-image {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    
+    .highlight-item2-content {
+      padding: 20px;
+      width: 100%;
+      
+      .highlight-item2-title {
+        font-size: 18px;
+      }
+      
+      .highlight-item2-description {
+        font-size: 14px;
+        margin: 10px 0;
+      }
+      
+      .highlight-item2-button {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

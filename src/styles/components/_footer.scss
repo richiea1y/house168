@@ -83,3 +83,62 @@
   font-size: 18px;
   font-weight: 600;
 }
+
+/* Responsive styles for screens smaller than 430px */
+@media screen and (max-width: 430px) {
+  .footer {
+    padding: 30px 20px;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  
+  .footer-content {
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+  .company-content {
+    max-width: 100%;
+    text-align: left;
+    
+    .company-logo {
+      justify-content: flex-start;
+    }
+    
+    .company-description {
+      font-size: 12px;
+    }
+  }
+  
+  .service-content {
+    text-align: left;
+  }
+  
+  .service-item {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    text-align: left;
+  }
+  
+  .contact-content,
+  .follow-us-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .follow-us-item {
+    justify-content: flex-start;
+  }
+  
+  .copyright-content {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+  }
+}
