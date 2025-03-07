@@ -3,9 +3,9 @@ import TheHeader from '@/components/TheHeader.vue';
 import TheHero from '@/components/TheHero.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
 import PromotionBanner from '@/components/PromotionBanner.vue';
+import TestimonialSlider from '@/components/TestimonialSlider.vue';
 // import ServiceSlider from '@/components/ServiceSlider.vue';
 import TheFooter from '@/components/TheFooter.vue';
-// import TestimonialSlider from '@/components/TestimonialSlider.vue';
 // import PartnerSlider from '@/components/PartnerSlider.vue';
 // import HighlightSection from '@/components/HighlightSection.vue';
 </script>
@@ -17,7 +17,7 @@ import TheFooter from '@/components/TheFooter.vue';
     <FeatureGrid />
     <PromotionBanner />
     <!-- <ServiceSlider /> -->
-    <!-- <TestimonialSlider /> -->
+    <TestimonialSlider />
     <!-- <PartnerSlider /> -->
     <!-- <HighlightSection /> -->
     <TheFooter />
