@@ -1,6 +1,7 @@
 @use "../mixins";
 @use "../abstract/functions";
 
+$hover-active-color: #FF8817;
 .navbar {
   @include mixins.flexBox(row, center, flex-start);
   color: #292929;
@@ -28,7 +29,7 @@
 
     // Apply hover effect only to nav items that are NOT agent-tools
     > *:not(.agent-tools):hover {
-      color: #FF8817;
+      color: $hover-active-color;
     }
 
     & > :last-child {
@@ -40,7 +41,7 @@
 // Mobile menu toggle button
 .mobile-menu-toggle {
   display: none;
-  font-size: 1.5rem;
+  font-size: functions.rem(24);
   cursor: pointer;
   margin-left: auto;
   z-index: 1001;
@@ -61,14 +62,15 @@
   
   // Add active state styling when dropdown is open
   &.dropdown-active {
-    color: #FF8817;
+    color: $hover-active-color;
   }
   
   img {
     filter: brightness(0);
     
     &.icon-active {
-      filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
+      // filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
+      filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(500%) hue-rotate(0deg);
     }
   }
   
@@ -78,7 +80,7 @@
     position: absolute;
     top: 185%;
     left: 0;
-    border-top: 2px solid #FF8817;
+    border-top: 2px solid $hover-active-color;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     min-width: 350px;
@@ -99,7 +101,7 @@
   
   &:hover {
     background-color: #f5f5f5;
-    color: #FF8817;
+    color: $hover-active-color;
     
     // Change vector-container background on hover
     .vector-container {
@@ -214,7 +216,7 @@
     cursor: pointer;
     
     &:hover {
-      color: #FF8817;
+      color: $hover-active-color;
     }
   }
 }
@@ -233,7 +235,7 @@
       background-color: white;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       min-width: 100%;
-      border-top: 2px solid #FF8817;
+      border-top: 2px solid $hover-active-color;
       z-index: 100;
     }
   }
@@ -242,7 +244,7 @@
 // Mobile styles (for screens under 430px)
 @media screen and (max-width: 430px) {
   .navbar {
-    padding: 0.75rem 1rem;
+    padding: functions.rem(12) functions.rem(16);
     position: relative;
     align-items: center;
     justify-content: space-between;
@@ -253,7 +255,7 @@
       z-index: 1001;
       
       img {
-        height: 2rem;
+        height: 2em;
       }
     }
   }
@@ -276,7 +278,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding-top: 4.5rem;
+    padding-top: functions.rem(72);
     overflow-y: auto;
     box-shadow: none;
     
@@ -286,8 +288,9 @@
   }
   
   .nav-links {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    // grid-template-columns: 1fr;
+    flex-direction: column;
     margin: 0 !important;
     padding: 0 !important;
     width: 100%;

@@ -18,12 +18,14 @@
           @click="toggleAgentTools"
           :class="{ 'dropdown-active': agentToolsDropdownOpen }"
         >
-          房仲工具
-          <img
-            src="@/assets/images/icon/stat-minus_icon.svg"
-            alt="toggle-icon"
-            :class="{ 'icon-active': agentToolsDropdownOpen }"
-          />
+          <div class="agent-tools name-container">
+            房仲工具
+            <img
+              src="@/assets/images/icon/stat-minus_icon.svg"
+              alt="toggle-icon"
+              :class="{ 'icon-active': agentToolsDropdownOpen }"
+            />
+          </div>
           <div v-if="agentToolsDropdownOpen" class="dropdown-menu">
             <div class="dropdown-item">
               <div class="vector-container">
