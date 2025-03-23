@@ -92,12 +92,14 @@
           @click="toggleLanguageMenu"
           :class="{ 'dropdown-active': languageMenuOpen }"
         >
-          語言切換
-          <img
-            src="@/assets/images/icon/stat-minus_icon.svg"
-            alt="toggle-icon"
-            :class="{ 'icon-active': languageMenuOpen }"
-          />
+          <div class="language-dropdown-mobile name-container">
+            語言切換
+            <img
+              src="@/assets/images/icon/stat-minus_icon.svg"
+              alt="toggle-icon"
+              :class="{ 'icon-active': languageMenuOpen }"
+            />
+          </div>
           <div v-if="languageMenuOpen" class="dropdown-menu language-dropdown-menu">
             <div class="dropdown-item language-item-mobile">繁體中文</div>
             <div class="dropdown-item language-item-mobile">日本語</div>

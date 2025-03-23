@@ -65,14 +65,7 @@ $hover-active-color: #FF8817;
     color: $hover-active-color;
   }
   
-  img {
-    filter: brightness(0);
-    
-    &.icon-active {
-      // filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
-      filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(500%) hue-rotate(0deg);
-    }
-  }
+  @include mixins.nav-link-dropdown-icon__active;
   
   .dropdown-menu {
     display: grid;
@@ -184,13 +177,7 @@ $hover-active-color: #FF8817;
     cursor: pointer;
     font-size: 16px;
 
-    img {
-      filter: brightness(0);
-      
-      &.icon-active {
-        filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
-      }
-    }
+    @include mixins.nav-link-dropdown-icon__active;
   }
 }
 
@@ -224,7 +211,13 @@ $hover-active-color: #FF8817;
 // Mobile-specific styles for language dropdown
 .language-dropdown-mobile {
   display: none;
-  
+  img {
+    filter: brightness(0);
+    
+    &.icon-active {
+      filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
+    }
+  }
   .dropdown-menu {
     display: none;
     
@@ -288,36 +281,42 @@ $hover-active-color: #FF8817;
   }
   
   .nav-links {
-    display: flex;
-    // grid-template-columns: 1fr;
-    flex-direction: column;
     margin: 0 !important;
-    padding: 0 !important;
     width: 100%;
-    box-shadow: none;
     
     .dropdown-nav-item {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-      &.agent-tools {
-        .dropdown-menu {
-          position: static;
-          margin-top: 1rem;
-          min-width: 100%;
-          box-shadow: none;
-          border-top: none;
-        }
+      flex-direction: column;
+
+      .dropdown-nav-item {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
       }
     }
+  }
+
+  .agent-tools {
+    @include mixins.nav-link-dropdown-icon__active(180deg);
+    
+    .dropdown-menu {
+      position: static;
+      margin-top: 1rem;
+      min-width: 100%;
+      box-shadow: none;
+      border-top: none;
+    }
+    
   }
   
   // Show mobile language dropdown
   .language-dropdown-mobile {
     display: flex !important;
+
+    @include mixins.nav-link-dropdown-icon__active(180deg);
     
     .dropdown-menu {
       &.language-dropdown-menu {

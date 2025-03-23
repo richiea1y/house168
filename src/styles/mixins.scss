@@ -11,3 +11,16 @@
     gap: $gap;
   }
 }
+
+@mixin nav-link-dropdown-icon__active ($transform-deg: 0deg) {
+  img {
+    filter: brightness(0);
+
+    &.icon-active {
+      // filter: brightness(1) sepia(1) hue-rotate(5deg) saturate(5);
+      filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(500%) hue-rotate(0deg);
+
+      transform: rotate($transform-deg);
+    }
+  }
+}
