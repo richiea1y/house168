@@ -87,7 +87,7 @@
         <div class="dropdown-nav-item">房屋交易</div>
 
         <!-- Language dropdown for mobile view -->
-        <div
+        <!-- <div
           class="dropdown-nav-item language-dropdown-mobile"
           @click="toggleLanguageMenu"
           :class="{ 'dropdown-active': languageMenuOpen }"
@@ -108,7 +108,7 @@
             <div class="dropdown-item language-item-mobile">English</div>
             <div class="dropdown-item language-item-mobile">한국어</div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- User utility menu (login/membership) -->
@@ -125,7 +125,18 @@
           @click="toggleLanguageMenu"
           :class="{ 'language-menu-open': languageMenuOpen }"
         >
-          <img src="@/assets/images/icon/language_icon.svg" alt="language-icon" />Language
+          <div v-if="viewportWidth > 768" class="language-btn-container desktop-only">
+            <img src="@/assets/images/icon/language_icon.svg" alt="language-icon" />
+            <div class="language-btn-name">Language</div>
+          </div>
+          <div v-else class="language-btn-container mobile-only">
+            <div class="language-btn-name">語言切換</div>
+            <img
+              src="@/assets/images/icon/stat-minus_icon.svg"
+              alt="toggle-icon"
+              :class="{ 'icon-active': languageMenuOpen }"
+            />
+          </div>
           <div class="language-menu" :class="{ 'language-menu-open': languageMenuOpen }">
             <div class="language-item">繁體中文</div>
             <div class="language-item">日本語</div>
@@ -147,6 +158,8 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 const agentToolsDropdownOpen = ref(false);
 const languageMenuOpen = ref(false);
 const mobileMenuOpen = ref(false);
+
+const viewportWidth = ref(window.innerWidth);
 
 // Methods
 const toggleAgentTools = () => {
@@ -192,12 +205,17 @@ const handleResize = () => {
   }
 };
 
+const updateWidth = () => {
+  viewportWidth.value = window.innerWidth;
+};
+
 // Lifecycle hooks
 onMounted(() => {
   // Add event listeners
   document.addEventListener('click', closeDropdown);
   document.addEventListener('click', closeLanguageMenu);
   window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', updateWidth);
 });
 
 onBeforeUnmount(() => {
@@ -205,6 +223,7 @@ onBeforeUnmount(() => {
   document.removeEventListener('click', closeDropdown);
   document.removeEventListener('click', closeLanguageMenu);
   window.removeEventListener('resize', handleResize);
+  window.removeEventListener('resize', updateWidth);
 
   agentToolsDropdownOpen.value = false;
   languageMenuOpen.value = false;

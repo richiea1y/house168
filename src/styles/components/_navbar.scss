@@ -177,7 +177,17 @@ $hover-active-color: #FF8817;
     cursor: pointer;
     font-size: 16px;
 
-    @include mixins.nav-link-dropdown-icon__active;
+    .language-btn-container {
+      display: flex;
+      align-items: center;
+      gap: functions.rem(8);
+      @include mixins.nav-link-dropdown-icon__active;
+
+      &.mobile-only {
+        gap: 0;
+      }
+    }
+
   }
 }
 
@@ -331,9 +341,9 @@ $hover-active-color: #FF8817;
   }
   
   // Hide desktop language menu
-  .language-btn.desktop-only {
-    display: none;
-  }
+  // .language-btn.desktop-only {
+  //   display: none;
+  // }
   
   // User utility menu (login/membership)
   .user-utility-menu {
