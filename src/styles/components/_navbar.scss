@@ -1,11 +1,12 @@
 @use "../mixins";
+@use "../abstract/functions";
 
 .navbar {
   @include mixins.flexBox(row, center, flex-start);
   color: #292929;
   width: 100%;
   position: relative;
-  padding: 1rem 1.5rem;
+  padding:  1em 1.5em;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   max-width: 100%;
   box-sizing: border-box;

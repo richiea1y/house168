@@ -2,13 +2,14 @@
 /* Usage -- font-size: rem(16) */
 
 /* Import the math module */
-@use 'sass:math'
+@use 'sass:math';
 
 /* Define the rem function */
+
 @function rem($pixel) {
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
   } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.':
+    @error 'Don\'t use units when using the rem() function; only numbers.';
   }
 }
