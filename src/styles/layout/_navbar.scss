@@ -12,34 +12,19 @@ $hover-active-color: #FF8817;
   max-width: 100%;
   box-sizing: border-box;
   flex-wrap: wrap;
+}
 
-  .logo-container {
-    margin: 0 2.5rem;
-    
-    img {
-      height: 2.5rem;
-    }
+// Logo container
+.navbar-logo {
+  margin: 0 functions.rem(40);
+  
+  img {
+    height: functions.rem(40);
   }
-
-  .nav-links {
-    @include mixins.flexBox(row, center, flex-start, 1.7em);
-    flex-wrap: wrap;
-    margin-left: 2.5em;
-    padding: 0 0.5em;
-
-    // Apply hover effect only to nav items that are NOT agent-tools
-    > *:not(.agent-tools):hover {
-      color: $hover-active-color;
-    }
-
-    & > :last-child {
-      margin-left: 0.25em;
-    }
-  } 
 }
 
 // Mobile menu toggle button
-.mobile-menu-toggle {
+.menu-toggle {
   display: none;
   font-size: functions.rem(24);
   cursor: pointer;
@@ -48,11 +33,29 @@ $hover-active-color: #FF8817;
 }
 
 // Menu container for desktop and mobile
-.menu-container {
+.navbar-menu {
   display: flex;
   align-items: center;
   flex-grow: 1;
 }
+
+
+.menu-items {
+  @include mixins.flexBox(row, center, flex-start, 1.7em);
+  flex-wrap: wrap;
+  margin-left: 2.5em;
+  padding: 0 0.5em;
+
+  // Apply hover effect only to nav items that are NOT agent-tools
+  > *:not(.agent-tools):hover {
+    color: $hover-active-color;
+  }
+
+  > :last-child {
+    margin-left: 0.25em;
+  }
+} 
+
 
 .agent-tools {
   display: flex;
@@ -67,7 +70,7 @@ $hover-active-color: #FF8817;
   
   @include mixins.nav-link-dropdown-icon__active;
   
-  .dropdown-menu {
+  .dropdown-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     position: absolute;
@@ -228,7 +231,7 @@ $hover-active-color: #FF8817;
       filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
     }
   }
-  .dropdown-menu {
+  .dropdown-items {
     display: none;
     
     &.language-dropdown-menu {
@@ -253,7 +256,7 @@ $hover-active-color: #FF8817;
     justify-content: space-between;
     box-shadow: none;
     
-    .logo-container {
+    .navbar-logo {
       margin: 0;
       z-index: 1001;
       
@@ -263,13 +266,13 @@ $hover-active-color: #FF8817;
     }
   }
   
-  // Show mobile menu toggle
-  .mobile-menu-toggle {
+  // Show mobile menu toggle [x]
+  .menu-toggle{
     display: block;
   }
   
   // Hide desktop menu elements
-  .menu-container {
+  .navbar-menu {
     display: none;
     position: fixed;
     top: 0;
@@ -290,29 +293,26 @@ $hover-active-color: #FF8817;
     }
   }
   
-  .nav-links {
+  .menu-items {
     margin: 0 !important;
     width: 100%;
     
-    .dropdown-nav-item {
-      display: flex;
-      flex-direction: column;
-
-      .dropdown-nav-item {
-        padding: 1rem;
-        border-bottom: 1px solid #eee;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-      }
-    }
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .agent-tools {
     @include mixins.nav-link-dropdown-icon__active(180deg);
     
-    .dropdown-menu {
+    .dropdown-items {
       position: static;
       margin-top: 1rem;
       min-width: 100%;
@@ -328,7 +328,7 @@ $hover-active-color: #FF8817;
 
     @include mixins.nav-link-dropdown-icon__active(180deg);
     
-    .dropdown-menu {
+    .dropdown-items {
       &.language-dropdown-menu {
         position: static;
         margin-top: 1rem;

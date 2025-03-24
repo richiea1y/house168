@@ -1,24 +1,24 @@
 <template>
   <nav class="navbar">
-    <div class="logo-container">
+    <div class="navbar-logo">
       <img src="@/assets/images/Logo.png" alt="house168 logo" />
     </div>
 
     <!-- Mobile menu toggle button -->
-    <div class="mobile-menu-toggle" @click="toggleMobileMenu">
+    <!-- <div class="menu-toggle mobile" @click="toggleMobileMenu">
       <span v-if="!mobileMenuOpen">☰</span>
       <span v-else>✕</span>
-    </div>
+    </div> -->
 
     <!-- Menu container with both desktop and mobile menus -->
-    <div class="menu-container" :class="{ 'mobile-menu-open': mobileMenuOpen }">
-      <div class="nav-links" :class="{ 'mobile-visible': mobileMenuOpen }">
+    <div class="navbar-menu" :class="{ 'mobile-menu-open': mobileMenuOpen }">
+      <div class="menu-items" :class="{ 'mobile-visible': mobileMenuOpen }">
         <div
-          class="dropdown-nav-item agent-tools"
+          class="menu-item agent-tools"
           @click="toggleAgentTools"
           :class="{ 'dropdown-active': agentToolsDropdownOpen }"
         >
-          <div class="agent-tools name-container">
+          <div class="menu__dropdown--label agent-tools">
             房仲工具
             <img
               src="@/assets/images/icon/stat-minus_icon.svg"
@@ -26,7 +26,7 @@
               :class="{ 'icon-active': agentToolsDropdownOpen }"
             />
           </div>
-          <div v-if="agentToolsDropdownOpen" class="dropdown-menu">
+          <div v-if="agentToolsDropdownOpen" class="dropdown-items">
             <div class="dropdown-item">
               <div class="vector-container">
                 <img
@@ -83,8 +83,8 @@
             </div>
           </div>
         </div>
-        <div class="dropdown-nav-item">定價</div>
-        <div class="dropdown-nav-item">房屋交易</div>
+        <div class="menu-item">定價</div>
+        <div class="menu-item">房屋交易</div>
 
         <!-- Language dropdown for mobile view -->
         <!-- <div
@@ -92,7 +92,7 @@
           @click="toggleLanguageMenu"
           :class="{ 'dropdown-active': languageMenuOpen }"
         >
-          <div class="language-dropdown-mobile name-container">
+          <div class="language-dropdown-mobile">
             語言切換
             <img
               src="@/assets/images/icon/stat-minus_icon.svg"

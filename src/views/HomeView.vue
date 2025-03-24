@@ -1,5 +1,5 @@
 <script setup>
-import TheHeader from '@/components/TheHeader.vue';
+import Navbar from '@/components/Navbar.vue';
 import TheHero from '@/components/TheHero.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
 import PromotionBanner from '@/components/PromotionBanner.vue';
@@ -10,7 +10,7 @@ import TheFooter from '@/components/TheFooter.vue';
 
 <template>
   <div id="app">
-    <TheHeader />
+    <Navbar />
     <TheHero />
     <FeatureGrid />
     <PromotionBanner />
