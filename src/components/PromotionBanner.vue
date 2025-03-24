@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '@/styles/components/_promotion.scss';
+@use '@/styles/layout/_promotion.scss';
 </style>

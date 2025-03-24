@@ -55,5 +55,5 @@
 <script setup></script>
 
 <style lang="scss">
-@use '@/styles/components/_highlight.scss';
+@use '@/styles/layout/_highlight.scss';
 </style>

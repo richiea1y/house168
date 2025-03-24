@@ -101,12 +101,12 @@
             />
           </div>
           <div v-if="languageMenuOpen" class="dropdown-menu language-dropdown-menu">
-            <div class="dropdown-item language-item-mobile">繁體中文</div>
-            <div class="dropdown-item language-item-mobile">日本語</div>
-            <div class="dropdown-item language-item-mobile">简体中文</div>
-            <div class="dropdown-item language-item-mobile">Deutsch</div>
-            <div class="dropdown-item language-item-mobile">English</div>
-            <div class="dropdown-item language-item-mobile">한국어</div>
+            <div class="dropdown-item xlanguage-item-mobile">繁體中文</div>
+            <div class="dropdown-item xlanguage-item-mobile">日本語</div>
+            <div class="dropdown-item xlanguage-item-mobile">简体中文</div>
+            <div class="dropdown-item xlanguage-item-mobile">Deutsch</div>
+            <div class="dropdown-item xlanguage-item-mobile">English</div>
+            <div class="dropdown-item xlanguage-item-mobile">한국어</div>
           </div>
         </div> -->
       </div>
@@ -233,5 +233,5 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss">
-@use '@/styles/components/_navbar.scss';
+@use '@/styles/layout/_navbar.scss';
 </style>

@@ -21,5 +21,5 @@ import TheFooter from '@/components/TheFooter.vue';
 </template>
 
 <style lang="scss">
-@use '@/styles/components/_navbar.scss';
+@use '../styles/main.scss';
 </style>

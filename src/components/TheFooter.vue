@@ -50,5 +50,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '@/styles/components/_footer.scss';
+@use '@/styles/layout/_footer.scss';
 </style>

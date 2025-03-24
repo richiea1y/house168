@@ -131,5 +131,5 @@ const features = [
 </script>
 
 <style lang="scss">
-@use '@/styles/components/_feature-grid.scss';
+@use '@/styles/layout/_feature-grid.scss';
 </style>

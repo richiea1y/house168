@@ -146,5 +146,5 @@ const marqueeImages = ref([
 </script>
 
 <style lang="scss">
-@use '@/styles/components/_testimonial.scss';
+@use '@/styles/layout/_testimonial.scss';
 </style>

@@ -1,5 +1,15 @@
-@use "./layouts.scss";
-@use "./components/_navbar.scss";
+@use "./abstract/functions";
+@use "./abstract/mixins";
+
+@use "./layout/navbar";
+@use "./layout/hero";
+@use "./layout/feature-grid";
+@use "./layout/promotion";
+@use "./layout/testimonial";
+@use "./layout/highlight";
+@use "./layout/footer";
+
+
 
 body,
 html {

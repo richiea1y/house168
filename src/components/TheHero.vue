@@ -91,5 +91,5 @@
 <script setup></script>
 
 <style lang="scss">
-@use '@/styles/components/_hero.scss';
+@use '@/styles/layout/_hero.scss';
 </style>
