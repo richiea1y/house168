@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue';
+// import { onMounted, onBeforeUnmount } from 'vue';
 
 // Data
 // const dropdownOpen = ref(false);
@@ -65,25 +65,25 @@ const toggleDropdown = event => {
 };
 
 // Close dropdown when clicking outside
-const closeDropdown = event => {
-  if (props.status && !event.target.closest('.dropdown')) {
-    dropdownStatus.value = false;
-  }
-};
+// const closeDropdown = event => {
+//   if (props.status && !event.target.closest('.dropdown')) {
+//     dropdownStatus.value = false;
+//   }
+// };
 
 // Lifecycle hooks
 // Add and remove event listeners with lifecycle hooks
-onMounted(() => {
-  document.addEventListener('click', closeDropdown);
-  console.log('Dropdown mounted, items:', props.items.length);
-});
+// onMounted(() => {
+//   document.addEventListener('click', closeDropdown);
+//   console.log('Dropdown mounted, items:', props.items.length);
+// });
 
-onBeforeUnmount(() => {
-  document.removeEventListener('click', closeDropdown);
-  dropdownStatus.value = false;
+// onBeforeUnmount(() => {
+//   document.removeEventListener('click', closeDropdown);
+//   dropdownStatus.value = false;
 
-  console.log('Dropdown unmounted');
-});
+//   console.log('Dropdown unmounted');
+// });
 </script>
 
 <style lang="scss" scoped>

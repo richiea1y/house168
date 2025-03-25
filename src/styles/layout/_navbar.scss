@@ -30,15 +30,6 @@ $hover-active-color: #FF8817;
   }
 }
 
-// Mobile menu toggle button
-.menu__toggle {
-  // display: none;
-  font-size: functions.rem(24);
-  cursor: pointer;
-  margin-left: auto;
-  z-index: 1001;
-}
-
 .menu__items {
   display: flex;
   align-items: center;

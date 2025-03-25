@@ -5,14 +5,11 @@
     </div>
 
     <!-- Mobile menu toggle button -->
-    <div class="menu__toggle mobile" @click="toggleMobileMenu">
-      <span v-if="!mobileMenuOpen">☰</span>
-      <span v-else>✕</span>
-    </div>
+    <MobileMenu v-model:mobile-menu-status="mobileMenuOpen" />
 
     <!-- Menu container with both desktop and mobile menus -->
-    <div class="navbar__menu" :class="{ 'mobile-menu-open': mobileMenuOpen }">
-      <div class="menu__items" :class="{ 'mobile-visible': mobileMenuOpen }">
+    <div class="navbar__menu" :class="{ 'mobile__menu--open': dropdownMobileOpen }">
+      <div class="menu__items" :class="{ 'mobile__menu--visible': dropdownMobileOpen }">
         <DropdownTools
           label="房仲工具"
           type="tools"
@@ -24,7 +21,7 @@
       </div>
 
       <!-- User utility menu (login/membership) -->
-      <div class="user-utility-menu" :class="{ 'mobile-visible': mobileMenuOpen }">
+      <div class="user-utility-menu" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
         <button class="login__btn">登入</button>
         <button class="member__btn">
           <img
@@ -67,18 +64,19 @@
 <script setup>
 import { ref } from 'vue';
 import DropdownTools from '@/components/Navbar/DropdownTools.vue';
+import MobileMenu from '@/components/Navbar/MobileMenu.vue';
 
 // State
+const mobileMenuOpen = ref(false);
 const dropdownToolsOpen = ref(false);
 const languageMenuOpen = ref(false);
-const mobileMenuOpen = ref(false);
 const viewportWidth = ref(window.innerWidth);
 
 const toolItems = [
-  { id: 1, text: '房屋變裝', iconSrc: '@/assets/images/icon/tools-icon1.png' },
-  { id: 2, text: '建商製作', iconSrc: '@/assets/images/icon/tools-icon2.png' },
-  { id: 3, text: 'LINE貼圖', iconSrc: '@/assets/images/icon/tools-icon3.png' },
-  { id: 4, text: '銷售報告書', iconSrc: '@/assets/images/icon/tools-icon4.png' },
+  { id: 1, text: '房屋變裝', iconSrc: '/src/assets/images/icon/tools-icon1.png' },
+  { id: 2, text: '建商製作', iconSrc: '/src/assets/images/icon/tools-icon2.png' },
+  { id: 3, text: 'LINE貼圖', iconSrc: '/src/assets/images/icon/tools-icon3.png' },
+  { id: 4, text: '銷售報告書', iconSrc: '/src/assets/images/icon/tools-icon4.png' },
   { id: 5, text: '顧問型影音', iconSrc: '/src/assets/images/icon/dropdown-item_vector5.svg' },
   { id: 6, text: '浮水印', iconSrc: '/src/assets/images/icon/dropdown-item_vector6.svg' }
 ];
@@ -95,17 +93,6 @@ const toolItems = [
 const toggleLanguageMenu = () => {
   languageMenuOpen.value = !languageMenuOpen.value;
 };
-
-// const toggleMobileMenu = () => {
-//   mobileMenuOpen.value = !mobileMenuOpen.value;
-
-//   // Close other dropdowns when toggling mobile menu
-//   if (mobileMenuOpen.value) {
-//     document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-//   } else {
-//     document.body.style.overflow = '';
-//   }
-// };
 
 // const closeDropdown = event => {
 //   // Close dropdown when clicking outside
