@@ -79,13 +79,21 @@ onBeforeUnmount(() => {
 
 <style lang="scss" scoped>
 $hover-active-color: #ff8817;
+$hover-active-color-variant: #0b89fe;
 .dropdown {
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
 
-  &--active {
+  &:hover {
+    color: $hover-active-color;
+    .dropdown__icon {
+      filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(500%) hue-rotate(0deg);
+    }
+  }
+
+  &--active > &__label {
     color: $hover-active-color;
   }
 
@@ -101,10 +109,8 @@ $hover-active-color: #ff8817;
     position: absolute;
     z-index: 100;
     top: 100%;
-    // left: 30%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    // gap: 0.5em 1.5em;
     padding: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     background-color: white;
@@ -116,6 +122,10 @@ $hover-active-color: #ff8817;
     align-items: center;
     gap: 0.4em;
     padding: 0.2em 1em 0.3em 0.2em;
+
+    &:hover {
+      color: $hover-active-color-variant;
+    }
   }
 }
 </style>

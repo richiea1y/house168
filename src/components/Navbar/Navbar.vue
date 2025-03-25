@@ -20,10 +20,11 @@
 
       <!-- User utility menu (login/membership) -->
       <div class="user-utility-menu" :class="{ 'mobile-visible': mobileMenuOpen }">
-        <button class="login-btn">會員登入</button>
-        <button class="membership-btn">
+        <button class="login__btn">登入</button>
+        <button class="member__btn">
           <img
-            src="@/assets/images/icon/account-circle_icon.svg"
+            class="member__icon"
+            src="@/assets/images/icon/member-icon.png"
             alt="account-circle-icon"
           />會員中心
         </button>
@@ -69,10 +70,10 @@ const mobileMenuOpen = ref(false);
 const viewportWidth = ref(window.innerWidth);
 
 const toolItems = [
-  { id: 1, text: '房屋變裝', iconSrc: '/src/assets/images/icon/dropdown-item_vector1.svg' },
-  { id: 2, text: '建商製作', iconSrc: '/src/assets/images/icon/dropdown-item_vector2.svg' },
-  { id: 3, text: 'LINE貼圖', iconSrc: '/src/assets/images/icon/dropdown-item_vector3.svg' },
-  { id: 4, text: '銷售報告書', iconSrc: '/src/assets/images/icon/dropdown-item_vector4.svg' },
+  { id: 1, text: '房屋變裝', iconSrc: '@/assets/images/icon/dropdown-item_vector1.svg' },
+  { id: 2, text: '建商製作', iconSrc: '@/assets/images/icon/dropdown-item_vector2.svg' },
+  { id: 3, text: 'LINE貼圖', iconSrc: '@/assets/images/icon/dropdown-item_vector3.svg' },
+  { id: 4, text: '銷售報告書', iconSrc: '@/assets/images/icon/dropdown-item_vector4.svg' },
   { id: 5, text: '顧問型影音', iconSrc: '/src/assets/images/icon/dropdown-item_vector5.svg' },
   { id: 6, text: '浮水印', iconSrc: '/src/assets/images/icon/dropdown-item_vector6.svg' }
 ];

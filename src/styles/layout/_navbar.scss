@@ -47,7 +47,7 @@ $hover-active-color: #FF8817;
   padding: 0 1em;
 
   // Apply hover effect only to nav items that are NOT agent-tools
-  > *:not(.dropdown):hover {
+  > .menu__item:not(.dropdown):hover {
     color: $hover-active-color;
   }
 
@@ -108,7 +108,7 @@ $hover-active-color: #FF8817;
     height: 35px;
   }
   
-  .login-btn {
+  .login__btn {
     width: 85px;
     background-color: #0b89fe;
     margin-right: 0.9rem;
@@ -121,21 +121,36 @@ $hover-active-color: #FF8817;
     align-items: center;
     justify-content: center;
     font-size: 0.9rem;
+
+    &:hover {
+      background-color: #5f90a9;
+    }
   }
 
-  .membership-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; 
-    background-color: #d9d9d9;
-    border-radius: 50px;
-    padding: 0.5rem 0.75rem;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
+  .member {
+    &__btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem; 
+      background-color: #d9d9d9;
+      border-radius: 50px;
+      padding: 0.5rem 0.75rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: #868686;
+        color: #fff;
+        .member__icon {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
     
-    img {
+    &__icon {
       filter: brightness(0);
+      max-width: 1.5em;
     }
   }
 
