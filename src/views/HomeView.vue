@@ -1,5 +1,5 @@
 <script setup>
-import Navbar from '@/components/Navbar.vue';
+import Navbar from '@/components/Navbar/Navbar.vue';
 import TheHero from '@/components/TheHero.vue';
 import FeatureGrid from '@/components/FeatureGrid.vue';
 import PromotionBanner from '@/components/PromotionBanner.vue';
