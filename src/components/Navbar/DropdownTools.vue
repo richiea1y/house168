@@ -2,21 +2,21 @@
   <div
     class="menu__item dropdown"
     @click="toggleDropdown"
-    :class="{ 'dropdown--active': dropdownOpen }"
+    :class="{ 'dropdown--active': dropdownStatus }"
   >
     <div class="dropdown__label">{{ props.label }}</div>
     <img
       src="@/assets/images/icon/stat-minus_icon.svg"
       alt="toggle-icon"
       class="dropdown__icon"
-      :class="{ 'dropdown__icon--active': dropdownOpen }"
+      :class="{ 'dropdown__icon--active': dropdownStatus }"
     />
   </div>
-  <div v-if="dropdownOpen" class="dropdown__items">
+  <div v-if="dropdownStatus" class="dropdown__items">
     <div
       v-for="item in items"
       :key="item.id"
-      :class="{ 'dropdown--active': dropdownOpen }"
+      :class="{ 'dropdown--active': dropdownStatus }"
       class="dropdown__item"
       @click="toggleDropdown"
     >
@@ -29,10 +29,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { onMounted, onBeforeUnmount } from 'vue';
 
 // Data
-const dropdownOpen = ref(false);
+// const dropdownOpen = ref(false);
+const dropdownStatus = defineModel('dropdownStatus', {
+  type: Boolean,
+  default: false
+});
 const props = defineProps({
   label: {
     type: String,
@@ -46,6 +50,10 @@ const props = defineProps({
   items: {
     type: Array,
     default: () => []
+  },
+  status: {
+    type: Boolean
+    // validator: value => ['active', 'inactive'].includes(value)
   }
 });
 
@@ -53,13 +61,13 @@ const props = defineProps({
 // Toggle dropdown
 const toggleDropdown = event => {
   event.stopPropagation(); // Prevent event from bubbling up
-  dropdownOpen.value = !dropdownOpen.value;
+  dropdownStatus.value = !dropdownStatus.value;
 };
 
 // Close dropdown when clicking outside
 const closeDropdown = event => {
-  if (dropdownOpen.value && !event.target.closest('.dropdown')) {
-    dropdownOpen.value = false;
+  if (props.status && !event.target.closest('.dropdown')) {
+    dropdownStatus.value = false;
   }
 };
 
@@ -72,7 +80,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', closeDropdown);
-  dropdownOpen.value = false;
+  dropdownStatus.value = false;
 
   console.log('Dropdown unmounted');
 });

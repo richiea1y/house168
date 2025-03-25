@@ -31,8 +31,8 @@ $hover-active-color: #FF8817;
 }
 
 // Mobile menu toggle button
-.menu--toggle {
-  display: none;
+.menu__toggle {
+  // display: none;
   font-size: functions.rem(24);
   cursor: pointer;
   margin-left: auto;

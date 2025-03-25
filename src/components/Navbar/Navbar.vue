@@ -5,15 +5,20 @@
     </div>
 
     <!-- Mobile menu toggle button -->
-    <!-- <div class="menu-toggle mobile" @click="toggleMobileMenu">
+    <div class="menu__toggle mobile" @click="toggleMobileMenu">
       <span v-if="!mobileMenuOpen">☰</span>
       <span v-else>✕</span>
-    </div> -->
+    </div>
 
     <!-- Menu container with both desktop and mobile menus -->
     <div class="navbar__menu" :class="{ 'mobile-menu-open': mobileMenuOpen }">
       <div class="menu__items" :class="{ 'mobile-visible': mobileMenuOpen }">
-        <DropdownMenu label="房仲工具" type="tools" :items="toolItems" />
+        <DropdownTools
+          label="房仲工具"
+          type="tools"
+          :items="toolItems"
+          v-model:dropdown-status="dropdownToolsOpen"
+        />
         <div class="menu__item">定價</div>
         <div class="menu__item">房屋交易</div>
       </div>
@@ -61,10 +66,10 @@
 
 <script setup>
 import { ref } from 'vue';
-import DropdownMenu from '@/components/Navbar/DropdownMenu.vue';
+import DropdownTools from '@/components/Navbar/DropdownTools.vue';
 
 // State
-// const agentToolsDropdownOpen = ref(false);
+const dropdownToolsOpen = ref(false);
 const languageMenuOpen = ref(false);
 const mobileMenuOpen = ref(false);
 const viewportWidth = ref(window.innerWidth);
