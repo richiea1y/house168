@@ -70,10 +70,10 @@ const mobileMenuOpen = ref(false);
 const viewportWidth = ref(window.innerWidth);
 
 const toolItems = [
-  { id: 1, text: '房屋變裝', iconSrc: '@/assets/images/icon/dropdown-item_vector1.svg' },
-  { id: 2, text: '建商製作', iconSrc: '@/assets/images/icon/dropdown-item_vector2.svg' },
-  { id: 3, text: 'LINE貼圖', iconSrc: '@/assets/images/icon/dropdown-item_vector3.svg' },
-  { id: 4, text: '銷售報告書', iconSrc: '@/assets/images/icon/dropdown-item_vector4.svg' },
+  { id: 1, text: '房屋變裝', iconSrc: '@/assets/images/icon/tools-icon1.png' },
+  { id: 2, text: '建商製作', iconSrc: '@/assets/images/icon/tools-icon2.png' },
+  { id: 3, text: 'LINE貼圖', iconSrc: '@/assets/images/icon/tools-icon3.png' },
+  { id: 4, text: '銷售報告書', iconSrc: '@/assets/images/icon/tools-icon4.png' },
   { id: 5, text: '顧問型影音', iconSrc: '/src/assets/images/icon/dropdown-item_vector5.svg' },
   { id: 6, text: '浮水印', iconSrc: '/src/assets/images/icon/dropdown-item_vector6.svg' }
 ];

@@ -20,8 +20,9 @@
       class="dropdown__item"
       @click="toggleDropdown"
     >
-      <!-- <img :src="item.iconSrc" /> -->
-      <img src="@/assets/images/icon/dropdown-item_vector1_variant.svg" alt="dropdown-item-icon" />
+      <div class="dropdown__icon-container">
+        <img :src="item.iconSrc" />
+      </div>
       <div>{{ item.text }}</div>
     </div>
   </div>
@@ -125,6 +126,18 @@ $hover-active-color-variant: #0b89fe;
 
     &:hover {
       color: $hover-active-color-variant;
+
+      img {
+        background-color: #60aef6;
+      }
+    }
+
+    & img {
+      // filter: brightness(0);
+      padding: 0.2em;
+      max-width: 35px;
+      border-radius: 5px;
+      background-color: #98c9f7;
     }
   }
 }
