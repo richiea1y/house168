@@ -35,7 +35,7 @@
           @click="toggleLanguageMenu"
           :class="{ 'language-menu-open': languageMenuOpen }"
         >
-          <div v-if="mobileScreen" class="language-btn-container desktop-only">
+          <div v-if="!mobileScreen" class="language-btn-container desktop-only">
             <img src="@/assets/images/icon/language_icon.svg" alt="language-icon" />
             <div class="language-btn-name">Language</div>
           </div>

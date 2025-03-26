@@ -2,8 +2,6 @@
 @use '../abstract/variables';
 
 
-// @media screen and (max-width: #{$medium-screen}) {
-//   .menu__toggle {
-//     display: block;
-//   }
-// }
+@media screen and (max-width: #{variables.$medium-screen}) {
+
+}

@@ -47,7 +47,7 @@ const toggleMobileMenu = () => {
   margin-left: auto;
   z-index: 101;
 
-  @media (max-width: variables.$medium-screen) {
+  @media screen and (max-width: variables.$medium-screen) {
     display: block;
   }
 }
