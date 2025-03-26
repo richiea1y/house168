@@ -36,9 +36,9 @@ const toggleMobileMenu = () => {
 
 <style lang="scss" scoped>
 @use '../../styles/abstract/functions';
+@use '../../styles/abstract/variables';
 @use '../../styles/components/mobile-menu';
 
-$medium-screen: 768px;
 // Mobile menu toggle button
 .menu__toggle {
   display: none;
@@ -47,7 +47,7 @@ $medium-screen: 768px;
   margin-left: auto;
   z-index: 101;
 
-  @media (max-width: $medium-screen) {
+  @media (max-width: variables.$medium-screen) {
     display: block;
   }
 }

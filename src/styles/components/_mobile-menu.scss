@@ -1,5 +1,6 @@
 
-$medium-screen: 768px;
+@use '../abstract/variables';
+
 
 // @media screen and (max-width: #{$medium-screen}) {
 //   .menu__toggle {
