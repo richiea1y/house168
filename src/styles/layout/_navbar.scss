@@ -60,18 +60,18 @@ $hover-active-color: #FF8817;
   }
   
   .users__login {
-    width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #0b89fe;
-    margin-right: 0.9rem;
     color: #fff;
+    font-size: 0.9rem;
+    width: 85px;
+    margin-right: 0.9rem;
     border-radius: 50px;
     padding: 0.5rem 0.75rem;
     border: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
 
     &:hover {
       background-color: #5f90a9;
@@ -100,84 +100,6 @@ $hover-active-color: #FF8817;
     .member__icon {
       filter: brightness(0);
       max-width: 1.5em;
-    }
-  }
-
-  .menu__language {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; 
-    background-color: transparent;
-    position: relative;
-    border-radius: 4px;
-    padding: 0.5rem 0.75rem;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-
-    .language--container {
-      display: flex;
-      align-items: center;
-      gap: functions.rem(8);
-      @include mixins.nav-link-dropdown-icon__active;
-
-      &.mobile-only {
-        gap: 0;
-      }
-    }
-
-  }
-}
-
-.language-menu {
-  position: absolute;
-  display: none;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: #fff;
-  min-width: 170px;
-  padding: 0.5rem 1rem;
-  top: 120%;
-  left: -75%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 4px;
-  z-index: 100;
-  
-  &.language-menu-open {
-    display: grid;
-  }
-  
-  .language-item {
-    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    cursor: pointer;
-    
-    &:hover {
-      color: $hover-active-color;
-    }
-  }
-}
-
-// Mobile-specific styles for language dropdown
-.language-dropdown-mobile {
-  display: none;
-  img {
-    filter: brightness(0);
-    
-    &.icon-active {
-      filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
-    }
-  }
-  .dropdown-items {
-    display: none;
-    
-    &.language-dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      min-width: 100%;
-      border-top: 2px solid $hover-active-color;
-      z-index: 100;
     }
   }
 }
