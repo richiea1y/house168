@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="menu__toggle mobile"
-    :class="{ 'mobile__toggle--active': mobileMenuStatus }"
-    @click="toggleMobileMenu"
-  >
+  <div class="menu__toggle" @click="toggleMobileMenu">
     <span v-if="!mobileMenuStatus">☰</span>
     <span v-else>✕</span>
   </div>
@@ -42,6 +38,7 @@ const toggleMobileMenu = () => {
 @use '../../styles/abstract/functions';
 @use '../../styles/components/mobile-menu';
 
+$medium-screen: 768px;
 // Mobile menu toggle button
 .menu__toggle {
   display: none;
@@ -49,5 +46,9 @@ const toggleMobileMenu = () => {
   cursor: pointer;
   margin-left: auto;
   z-index: 101;
+
+  @media (max-width: $medium-screen) {
+    display: block;
+  }
 }
 </style>
