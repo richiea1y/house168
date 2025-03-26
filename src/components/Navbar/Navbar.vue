@@ -36,6 +36,7 @@
       <DropdownLanguage
         :language-open="languageMenuOpen"
         :mobile-flag="mobileScreen"
+        :language-items="languageItems"
         @toggle-language="toggleLanguage"
       />
     </div>
@@ -63,14 +64,14 @@ const toolItems = [
   { id: 6, text: '浮水印', iconSrc: '/src/assets/images/icon/dropdown-item_vector6.svg' }
 ];
 
-// const languageItems = ref([
-//   { text: '繁體中文' },
-//   { text: '日本語' },
-//   { text: '简体中文' },
-//   { text: 'Deutsch' },
-//   { text: 'English' },
-//   { text: '한국어' }
-// ]);
+const languageItems = ref([
+  { id: 1, text: '繁體中文' },
+  { id: 2, text: '日本語' },
+  { id: 3, text: '简体中文' },
+  { id: 4, text: 'Deutsch' },
+  { id: 5, text: 'English' },
+  { id: 6, text: '한국어' }
+]);
 
 const toggleLanguage = () => {
   languageMenuOpen.value = !languageMenuOpen.value;

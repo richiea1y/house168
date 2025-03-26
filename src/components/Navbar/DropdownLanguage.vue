@@ -22,12 +22,9 @@
       />
     </div>
     <div class="language__items" :class="{ 'language-menu-open': props.languageOpen }">
-      <div class="language__item">繁體中文</div>
-      <div class="language__item">日本語</div>
-      <div class="language__item">简体中文</div>
-      <div class="language__item">Deutsch</div>
-      <div class="language__item">English</div>
-      <div class="language__item">한국어</div>
+      <div v-for="item in props.languageItems" :key="item.id" class="language__item">
+        {{ item.text }}
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +36,9 @@ const props = defineProps({
   },
   mobileFlag: {
     type: Boolean
+  },
+  languageItems: {
+    type: Array
   }
 });
 
