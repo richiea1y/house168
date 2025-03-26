@@ -33,6 +33,7 @@
       </div>
 
       <!-- Language menu -->
+      <DropdownLanguage />
       <div
         class="menu__language desktop-only"
         @click="toggleLanguageMenu"
@@ -67,7 +68,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import DropdownTools from '@/components/Navbar/DropdownTools.vue';
 import MobileMenu from '@/components/Navbar/MobileMenu.vue';
-
+import DropdownLanguage from '@/components/Navbar/DropdownLanguage.vue';
 // State
 const mobileScreen = ref(false);
 const mobileMenuOpen = ref(false);
