@@ -5,11 +5,11 @@
     </div>
 
     <!-- Mobile menu toggle button -->
-    <MobileMenu v-model:mobile-menu-status="mobileMenuOpen" />
+    <MobileMenu v-model:mobile-menu-status="mobileMenuOpen" v-model:mobile-flag="mobileScreen" />
 
     <!-- Menu container with both desktop and mobile menus -->
-    <div class="navbar__menu" :class="{ 'mobile__menu--open': dropdownMobileOpen }">
-      <div class="menu__items" :class="{ 'mobile__menu--visible': dropdownMobileOpen }">
+    <div class="navbar__menu" :class="{ 'mobile__menu--open': mobileMenuOpen }">
+      <div class="menu__items" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
         <DropdownTools
           label="房仲工具"
           type="tools"
@@ -35,7 +35,7 @@
           @click="toggleLanguageMenu"
           :class="{ 'language-menu-open': languageMenuOpen }"
         >
-          <div v-if="viewportWidth > 768" class="language-btn-container desktop-only">
+          <div v-if="mobileScreen" class="language-btn-container desktop-only">
             <img src="@/assets/images/icon/language_icon.svg" alt="language-icon" />
             <div class="language-btn-name">Language</div>
           </div>
@@ -62,15 +62,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import DropdownTools from '@/components/Navbar/DropdownTools.vue';
 import MobileMenu from '@/components/Navbar/MobileMenu.vue';
 
 // State
+const mobileScreen = ref(false);
 const mobileMenuOpen = ref(false);
+
 const dropdownToolsOpen = ref(false);
 const languageMenuOpen = ref(false);
-const viewportWidth = ref(window.innerWidth);
 
 const toolItems = [
   { id: 1, text: '房屋變裝', iconSrc: '/src/assets/images/icon/tools-icon1.png' },
@@ -94,55 +95,23 @@ const toggleLanguageMenu = () => {
   languageMenuOpen.value = !languageMenuOpen.value;
 };
 
-// const closeDropdown = event => {
-//   // Close dropdown when clicking outside
-//   if (!event.target.closest('.agent-tools')) {
-//     agentToolsDropdownOpen.value = false;
-//   }
-// };
-
-// const closeLanguageMenu = event => {
-//   if (
-//     !event.target.closest('.language-btn') &&
-//     !event.target.closest('.language-dropdown-mobile')
-//   ) {
-//     languageMenuOpen.value = false;
-//   }
-// };
-
-// const handleResize = () => {
-//   // Close mobile menu if screen size increases above mobile threshold
-//   if (window.innerWidth > 430 && mobileMenuOpen.value) {
-//     mobileMenuOpen.value = false;
-//     document.body.style.overflow = '';
-//   }
-// };
-
-// const updateWidth = () => {
-//   viewportWidth.value = window.innerWidth;
-// };
+// Open mobile flag when viewport width is less than 768px
+const handleResize = () => {
+  mobileScreen.value = window.innerWidth <= 768;
+};
 
 // Lifecycle hooks
-// onMounted(() => {
-// Add event listeners
-// document.addEventListener('click', closeDropdown);
-// document.addEventListener('click', closeLanguageMenu);
-// window.addEventListener('resize', handleResize);
-// window.addEventListener('resize', updateWidth);
-// });
+onMounted(() => {
+  // Initial check
+  handleResize();
+  // Add event listener
+  window.addEventListener('resize', handleResize);
+});
 
-// onBeforeUnmount(() => {
-// Clean up all listeners and reactive data to avoid memory leaks
-// document.removeEventListener('click', closeDropdown);
-// document.removeEventListener('click', closeLanguageMenu);
-// window.removeEventListener('resize', handleResize);
-// window.removeEventListener('resize', updateWidth);
-
-//   agentToolsDropdownOpen.value = false;
-//   languageMenuOpen.value = false;
-//   mobileMenuOpen.value = false;
-// document.body.style.overflow = '';
-// });
+onBeforeUnmount(() => {
+  // Clean up
+  window.removeEventListener('resize', handleResize);
+});
 </script>
 
 <style lang="scss">

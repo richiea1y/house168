@@ -1,0 +1,14 @@
+
+$medium-screen: 768px;
+
+@mixin mobile {
+  @media screen and (max-width: #{$medium-screen}) {
+    @content;
+  }
+}
+
+@media screen and (max-width: #{$medium-screen}) {
+  .menu__toggle {
+    display: block;
+  }
+}
