@@ -1,5 +1,6 @@
 @use "../abstract/mixins";
 @use "../abstract/functions";
+@use "../components/mobile-menu";
 
 $hover-active-color: #FF8817;
 .navbar {
@@ -47,7 +48,7 @@ $hover-active-color: #FF8817;
   }
 } 
 
-.user-utility-menu {
+.menu__users {
   @include mixins.flexBox(row, center, flex-end);
   flex-shrink: 0;
   margin-left: auto;
@@ -58,7 +59,7 @@ $hover-active-color: #FF8817;
     height: 35px;
   }
   
-  .login__btn {
+  .users__login {
     width: 85px;
     background-color: #0b89fe;
     margin-right: 0.9rem;
@@ -77,8 +78,7 @@ $hover-active-color: #FF8817;
     }
   }
 
-  .member {
-    &__btn {
+  .users__member {
       display: flex;
       align-items: center;
       gap: 0.5rem; 
@@ -90,21 +90,20 @@ $hover-active-color: #FF8817;
       font-size: 0.9rem;
 
       &:hover {
-        background-color: #868686;
-        color: #fff;
-        .member__icon {
-          filter: brightness(0) invert(1);
-        }
+      background-color: #868686;
+      color: #fff;
+      .member__icon {
+        filter: brightness(0) invert(1);
       }
     }
     
-    &__icon {
+    .member__icon {
       filter: brightness(0);
       max-width: 1.5em;
     }
   }
 
-  .language-btn {
+  .menu__language {
     display: flex;
     align-items: center;
     gap: 0.5rem; 
@@ -116,7 +115,7 @@ $hover-active-color: #FF8817;
     cursor: pointer;
     font-size: 16px;
 
-    .language-btn-container {
+    .language--container {
       display: flex;
       align-items: center;
       gap: functions.rem(8);

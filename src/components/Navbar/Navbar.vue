@@ -21,40 +21,42 @@
       </div>
 
       <!-- User utility menu (login/membership) -->
-      <div class="user-utility-menu" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
-        <button class="login__btn">登入</button>
-        <button class="member__btn">
+      <div class="menu__users" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
+        <button class="users__login">登入</button>
+        <button class="users__member">
           <img
             class="member__icon"
             src="@/assets/images/icon/member-icon.png"
             alt="account-circle-icon"
           />會員中心
         </button>
-        <div
-          class="language-btn desktop-only"
-          @click="toggleLanguageMenu"
-          :class="{ 'language-menu-open': languageMenuOpen }"
-        >
-          <div v-if="!mobileScreen" class="language-btn-container desktop-only">
-            <img src="@/assets/images/icon/language_icon.svg" alt="language-icon" />
-            <div class="language-btn-name">Language</div>
-          </div>
-          <div v-else class="language-btn-container mobile-only">
-            <div class="language-btn-name">語言切換</div>
-            <img
-              src="@/assets/images/icon/stat-minus_icon.svg"
-              alt="toggle-icon"
-              :class="{ 'icon-active': languageMenuOpen }"
-            />
-          </div>
-          <div class="language-menu" :class="{ 'language-menu-open': languageMenuOpen }">
-            <div class="language-item">繁體中文</div>
-            <div class="language-item">日本語</div>
-            <div class="language-item">简体中文</div>
-            <div class="language-item">Deutsch</div>
-            <div class="language-item">English</div>
-            <div class="language-item">한국어</div>
-          </div>
+      </div>
+
+      <!-- Language menu -->
+      <div
+        class="menu__language desktop-only"
+        @click="toggleLanguageMenu"
+        :class="{ 'language-menu-open': languageMenuOpen }"
+      >
+        <div v-if="!mobileScreen" class="language--container desktop-only">
+          <img src="@/assets/images/icon/language_icon.svg" alt="language-icon" />
+          <div class="language--label">Language</div>
+        </div>
+        <div v-else class="language--container mobile-only">
+          <div class="language--label">語言切換</div>
+          <img
+            src="@/assets/images/icon/stat-minus_icon.svg"
+            alt="toggle-icon"
+            :class="{ 'icon-active': languageMenuOpen }"
+          />
+        </div>
+        <div class="language-menu" :class="{ 'language-menu-open': languageMenuOpen }">
+          <div class="language-item">繁體中文</div>
+          <div class="language-item">日本語</div>
+          <div class="language-item">简体中文</div>
+          <div class="language-item">Deutsch</div>
+          <div class="language-item">English</div>
+          <div class="language-item">한국어</div>
         </div>
       </div>
     </div>
