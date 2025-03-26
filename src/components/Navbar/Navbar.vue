@@ -33,7 +33,11 @@
       </div>
 
       <!-- Language menu -->
-      <DropdownLanguage />
+      <DropdownLanguage
+        :language-open="languageMenuOpen"
+        :mobile-flag="mobileScreen"
+        @toggle-language="toggleLanguage"
+      />
     </div>
   </nav>
 </template>
@@ -68,7 +72,7 @@ const toolItems = [
 //   { text: '한국어' }
 // ]);
 
-const toggleLanguageMenu = () => {
+const toggleLanguage = () => {
   languageMenuOpen.value = !languageMenuOpen.value;
 };
 

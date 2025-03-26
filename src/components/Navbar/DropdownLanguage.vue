@@ -1,10 +1,10 @@
 <template>
   <div
     class="menu__language desktop-only"
-    @click="toggleLanguageMenu"
-    :class="{ 'language-menu-open': languageMenuOpen }"
+    @click="$emit('toggleLanguage')"
+    :class="{ 'language-menu-open': props.languageOpen }"
   >
-    <div v-if="!mobileScreen" class="language__container desktop-only">
+    <div v-if="!props.mobileFlag" class="language__container desktop-only">
       <img
         class="language__icon"
         src="@/assets/images/icon/language_icon.svg"
@@ -21,7 +21,7 @@
         :class="{ 'icon-active': languageMenuOpen }"
       />
     </div>
-    <div class="language__items" :class="{ 'language-menu-open': languageMenuOpen }">
+    <div class="language__items" :class="{ 'language-menu-open': props.languageOpen }">
       <div class="language__item">繁體中文</div>
       <div class="language__item">日本語</div>
       <div class="language__item">简体中文</div>
@@ -32,7 +32,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+  languageOpen: {
+    type: Boolean
+  },
+  mobileFlag: {
+    type: Boolean
+  }
+});
+
+defineEmits(['toggleLanguage']);
+</script>
 
 <style lang="scss" scoped>
 @use '../../styles/abstract/functions';
