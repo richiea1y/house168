@@ -1,10 +1,10 @@
 <template>
   <div
-    class="menu__language desktop-only"
+    class="menu__language desktop--only"
     @click="$emit('toggleLanguage')"
     :class="{ 'language-menu-open': props.languageOpen }"
   >
-    <div v-if="!props.mobileFlag" class="language__container desktop-only">
+    <div v-if="!props.mobileFlag" class="language__container desktop--only">
       <img
         class="language__icon"
         src="@/assets/images/icon/language_icon.svg"
@@ -12,13 +12,13 @@
       />
       <div class="language__label">Language</div>
     </div>
-    <div v-else class="language__container mobile-only">
-      <div class="language__label">語言切換</div>
+    <div v-else class="language__container mobile--only">
+      <div class="language__label mobile-only">語言切換</div>
       <img
         src="@/assets/images/icon/stat-minus_icon.svg"
         alt="toggle-icon"
-        class="language__icon"
-        :class="{ 'icon-active': languageMenuOpen }"
+        class="language__icon mobile--only"
+        :class="{ 'icon-active': props.languageOpen }"
       />
     </div>
     <div class="language__items" :class="{ 'language-menu-open': props.languageOpen }">
@@ -64,29 +64,37 @@ defineEmits(['toggleLanguage']);
   display: flex;
   align-items: center;
   gap: functions.rem(5);
+
+  &.mobile--only {
+    gap: 0;
+  }
 }
 
 .language__icon {
   width: 30px;
   filter: brightness(0);
+
+  &.mobile--only {
+    max-width: 24px;
+  }
 }
 
 // Language dropdown items
 .language__items {
-  position: absolute;
   display: none;
-  grid-template-columns: repeat(2, 1fr);
   background-color: #fff;
-  min-width: 170px;
-  padding: 0.5rem 1rem;
-  top: 120%;
-  left: -75%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  z-index: 100;
+  min-width: 192px;
+  padding: 0.5rem 1rem;
 
   &.language-menu-open {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    z-index: 100;
+    top: 120%;
+    left: -55%;
   }
 
   .language__item {

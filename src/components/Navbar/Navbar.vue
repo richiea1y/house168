@@ -34,6 +34,7 @@
 
       <!-- Language menu -->
       <DropdownLanguage
+        :class="{ 'mobile__menu--visible': mobileMenuOpen }"
         :language-open="languageMenuOpen"
         :mobile-flag="mobileScreen"
         :language-items="languageItems"
