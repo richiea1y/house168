@@ -1,25 +1,37 @@
 @use "../abstract/mixins";
 @use "../abstract/functions";
-@use "../components/mobile-menu";
-
+@use "../abstract/variables";
 $hover-active-color: #FF8817;
-.navbar {
-  @include mixins.flexBox(row, center, flex-start);
-  color: #292929;
+
+.header {
   width: 100%;
-  position: relative;
-  padding:  1em 1.5em;
+  background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  max-width: 100%;
-  box-sizing: border-box;
+
+  @media screen and (max-width: variables.$medium-screen) {
+    box-shadow: none;
+  }
+}
+
+.navbar {
+  @include mixins.flexBox(row, center, space-between);
   flex-wrap: wrap;
+  padding:  1.5em 1.5em;
+  margin: 0 auto;
+  max-width: variables.$xlarge-screen;
+  position: relative;
+  box-sizing: border-box;
+  color: #292929;
+
 
   // Navbar Logo container
   &__logo {
-    margin: 0 functions.rem(40);
+    display: flex;
+    align-items: center;
+    margin: 0 1em;
     
     img {
-      height: functions.rem(40);
+      max-width: 10em;
     }
   }
 
@@ -28,6 +40,10 @@ $hover-active-color: #FF8817;
     display: flex;
     align-items: center;
     flex-grow: 1;
+
+    @media screen and (max-width: variables.$medium-screen) {
+      display: none;
+    }
   }
 }
 
@@ -106,22 +122,6 @@ $hover-active-color: #FF8817;
 
 // Mobile styles (for screens under 430px)
 @media screen and (max-width: 430px) {
-  .navbar {
-    padding: functions.rem(12) functions.rem(16);
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: none;
-    
-    .navbar-logo {
-      margin: 0;
-      z-index: 1001;
-      
-      img {
-        height: 2em;
-      }
-    }
-  }
   
   // Show mobile menu toggle [x]
   .menu-toggle{

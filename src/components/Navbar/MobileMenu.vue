@@ -1,7 +1,7 @@
 <template>
   <div class="menu__toggle" @click="toggleMobileMenu">
-    <span v-if="!mobileMenuStatus">☰</span>
-    <span v-else>✕</span>
+    <span v-if="!mobileMenuStatus" class="menu__toggle--icon">☰</span>
+    <span v-else class="menu__toggle--icon">✕</span>
   </div>
 </template>
 
@@ -46,6 +46,10 @@ const toggleMobileMenu = () => {
   cursor: pointer;
   margin-left: auto;
   z-index: 101;
+
+  &--icon {
+    font-size: functions.rem(32);
+  }
 
   @media screen and (max-width: variables.$medium-screen) {
     display: block;

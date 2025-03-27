@@ -1,47 +1,49 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar__logo">
-      <img src="@/assets/images/Logo.png" alt="house168 logo" />
-    </div>
+  <section class="header">
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <img src="@/assets/images/Logo.png" alt="house168 logo" />
+      </div>
 
-    <!-- Mobile menu toggle button -->
-    <MobileMenu v-model:mobile-menu-status="mobileMenuOpen" v-model:mobile-flag="mobileScreen" />
+      <!-- Mobile menu toggle button -->
+      <MobileMenu v-model:mobile-menu-status="mobileMenuOpen" v-model:mobile-flag="mobileScreen" />
 
-    <!-- Menu container with both desktop and mobile menus -->
-    <div class="navbar__menu" :class="{ 'mobile__menu--open': mobileMenuOpen }">
-      <div class="menu__items" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
-        <DropdownTools
-          label="房仲工具"
-          type="tools"
-          :items="toolItems"
-          v-model:dropdown-status="dropdownToolsOpen"
+      <!-- Menu container with both desktop and mobile menus -->
+      <div class="navbar__menu" :class="{ 'mobile__menu--open': mobileMenuOpen }">
+        <div class="menu__items" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
+          <DropdownTools
+            label="房仲工具"
+            type="tools"
+            :items="toolItems"
+            v-model:dropdown-status="dropdownToolsOpen"
+          />
+          <div class="menu__item">定價</div>
+          <div class="menu__item">房屋交易</div>
+        </div>
+
+        <!-- User utility menu (login/membership) -->
+        <div class="menu__users" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
+          <button class="users__login">登入</button>
+          <button class="users__member">
+            <img
+              class="member__icon"
+              src="@/assets/images/icon/member-icon.png"
+              alt="account-circle-icon"
+            />會員中心
+          </button>
+        </div>
+
+        <!-- Language menu -->
+        <DropdownLanguage
+          :class="{ 'mobile__menu--visible': mobileMenuOpen }"
+          :language-open="languageMenuOpen"
+          :mobile-flag="mobileScreen"
+          :language-items="languageItems"
+          @toggle-language="toggleLanguage"
         />
-        <div class="menu__item">定價</div>
-        <div class="menu__item">房屋交易</div>
       </div>
-
-      <!-- User utility menu (login/membership) -->
-      <div class="menu__users" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
-        <button class="users__login">登入</button>
-        <button class="users__member">
-          <img
-            class="member__icon"
-            src="@/assets/images/icon/member-icon.png"
-            alt="account-circle-icon"
-          />會員中心
-        </button>
-      </div>
-
-      <!-- Language menu -->
-      <DropdownLanguage
-        :class="{ 'mobile__menu--visible': mobileMenuOpen }"
-        :language-open="languageMenuOpen"
-        :mobile-flag="mobileScreen"
-        :language-items="languageItems"
-        @toggle-language="toggleLanguage"
-      />
-    </div>
-  </nav>
+    </nav>
+  </section>
 </template>
 
 <script setup>
@@ -99,4 +101,5 @@ onBeforeUnmount(() => {
 
 <style lang="scss">
 @use '@/styles/layout/_navbar.scss';
+@use '@/styles/components/_mobile-menu.scss';
 </style>

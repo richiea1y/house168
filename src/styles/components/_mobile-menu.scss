@@ -3,9 +3,3 @@
 
 // @media screen and (max-width: #{variables.$medium-screen}) {}
 
-@media screen and (max-width: #{variables.$medium-screen}) {
-  .navbar__menu {
-    display: none;
-  }
-}
-
