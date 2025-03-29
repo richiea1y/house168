@@ -12,7 +12,7 @@
       />
       <div class="language__label">Language</div>
     </div>
-    <div v-else class="language__container mobile--only">
+    <div v-else class="language__container mobile__item mobile--only">
       <div class="language__label mobile-only">語言切換</div>
       <img
         src="@/assets/images/icon/stat-minus_icon.svg"
@@ -22,7 +22,7 @@
       />
     </div>
     <!-- Desktop language dropdown items -->
-    <div class="language__items" :class="{ 'language-menu-open': props.languageOpen }">
+    <div class="language__items mobile__item" :class="{ 'language-menu-open': props.languageOpen }">
       <div v-for="item in props.languageItems" :key="item.id" class="language__item">
         {{ item.text }}
       </div>
@@ -65,9 +65,15 @@ defineEmits(['toggleLanguage']);
     grid-template-columns: 1fr;
     justify-content: stretch;
     font-size: functions.rem(18);
-    padding: 1.6em 2em 0 2em;
+    padding: 0;
+    margin: 0;
     // margin: 1.6em 0 0 0;
-    border-bottom: 2px solid #d9d9d9;
+    // border-bottom: 2px solid #d9d9d9;
+
+    .mobile__item {
+      border-bottom: 2px solid #d9d9d9;
+      padding: 1.6em 2em 0 2em;
+    }
   }
 }
 
@@ -100,7 +106,6 @@ defineEmits(['toggleLanguage']);
   padding: 0.5rem 1rem;
 
   @media screen and (max-width: variables.$medium-screen) {
-    // border-bottom: 2px solid #d9d9d9;
     border-radius: 0;
   }
 
@@ -115,16 +120,18 @@ defineEmits(['toggleLanguage']);
     @media screen and (max-width: variables.$medium-screen) {
       grid-template-columns: 1fr;
       font-size: functions.rem(16);
+      padding: {
+        top: 0.8em;
+        bottom: 0.8em;
+        left: 4.1em;
+        right: 2em;
+      }
       position: relative;
       top: 0;
       left: 0;
       z-index: 0;
       box-shadow: none;
       border-top: none;
-
-      .language__container {
-        border-bottom: 2px solid #d9d9d9;
-      }
     }
   }
 
