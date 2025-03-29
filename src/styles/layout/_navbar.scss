@@ -1,7 +1,7 @@
 @use "../abstract/mixins";
 @use "../abstract/functions";
 @use "../abstract/variables";
-$hover-active-color: #FF8817;
+
 
 .header {
   width: 100%;
@@ -23,7 +23,6 @@ $hover-active-color: #FF8817;
   box-sizing: border-box;
   color: #292929;
 
-
   // Navbar Logo container
   &__logo {
     display: flex;
@@ -40,10 +39,6 @@ $hover-active-color: #FF8817;
     display: flex;
     align-items: center;
     flex-grow: 1;
-
-    @media screen and (max-width: variables.$medium-screen) {
-      display: none;
-    }
   }
 }
 
@@ -56,7 +51,7 @@ $hover-active-color: #FF8817;
 
   // Apply hover effect only to nav items that are NOT agent-tools
   > .menu__item:not(.dropdown):hover {
-    color: $hover-active-color;
+    color: variables.$hover-active-color;
   }
 
   > :last-child {
@@ -65,11 +60,24 @@ $hover-active-color: #FF8817;
 } 
 
 .menu__users {
-  @include mixins.flexBox(row, center, flex-end);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   flex-shrink: 0;
   margin-left: auto;
   flex-wrap: wrap;
   color: #000;
+  
+  // Mobile menu user utility menu styles
+  @media screen and (max-width: variables.$medium-screen) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #d9d9d9;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 10%;
+  }
 
   & > * {
     height: 35px;
@@ -92,134 +100,67 @@ $hover-active-color: #FF8817;
     &:hover {
       background-color: #4c768b;
     }
+
+    // Mobile menu login button styles
+    @media screen and (max-width: variables.$medium-screen) {
+      width: 100%;
+      height: 100%;
+      font-size: functions.rem(16);
+      margin: 0 auto;
+      color: #000;
+      background-color: #d9d9d9;
+
+      // Add divider line
+      border-radius: 0;
+      border-right: 1.5px solid #acacac;
+
+      &:hover {
+        background-color: #d9d9d9;
+      }
+    }
   }
 
   .users__member {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem; 
-      background-color: #d9d9d9;
-      border-radius: 50px;
-      padding: 0.5rem 0.75rem;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    background-color: #d9d9d9;
+    border-radius: 50px;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
 
-      &:hover {
+    // Mobile menu member button styles
+    @media screen and (max-width: variables.$medium-screen) {
+      margin: 0 auto;
+      font-size: functions.rem(16);background-color: #d9d9d9;
+      color: #000;
+      height: 100%;
+    }
+
+    &:hover {
       background-color: #868686;
       color: #fff;
+    
       .member__icon {
         filter: brightness(0) invert(1);
+
+        @media screen and (max-width: variables.$medium-screen) {
+          filter: brightness(0);
+        }
+      }
+
+      // Mobile menu member button hover styles
+      @media screen and (max-width: variables.$medium-screen) {
+        background-color: #d9d9d9;
+        color: #000;
       }
     }
     
     .member__icon {
       filter: brightness(0);
       max-width: 1.5em;
-    }
-  }
-}
-
-// Mobile styles (for screens under 430px)
-@media screen and (max-width: 430px) {
-  
-  // Show mobile menu toggle [x]
-  .menu-toggle{
-    display: block;
-  }
-  
-  // Hide desktop menu elements
-  // .navbar-menu {
-  //   display: none;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100vh;
-  //   background-color: white;
-  //   z-index: 1000;
-  //   flex-direction: column;
-  //   justify-content: flex-start;
-  //   align-items: stretch;
-  //   padding-top: functions.rem(72);
-  //   overflow-y: auto;
-  //   box-shadow: none;
-    
-  //   &.mobile-menu-open {
-  //     display: flex;
-  //   }
-  // }
-  
-  // .menu__items {
-  //   margin: 0 !important;
-  //   width: 100%;
-    
-  // }
-  
-
-  // .agent-tools {
-  //   @include mixins.nav-link-dropdown-icon__active(180deg);
-    
-  //   .dropdown-items {
-  //     position: static;
-  //     margin-top: 1rem;
-  //     min-width: 100%;
-  //     box-shadow: none;
-  //     border-top: none;
-  //   }
-    
-  // }
-  
-  // Show mobile language dropdown
-  .language-dropdown-mobile {
-    display: flex !important;
-
-    @include mixins.nav-link-dropdown-icon__active(180deg);
-    
-    .dropdown-items {
-      &.language-dropdown-menu {
-        position: static;
-        margin-top: 1rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        box-shadow: none;
-        border-top: none;
-      }
-    }
-  }
-  
-  // Hide desktop language menu
-  // .language-btn.desktop-only {
-  //   display: none;
-  // }
-  
-  // User utility menu (login/membership)
-  .user-utility-menu {
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    border-top: 1px solid #eee;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    box-shadow: none;
-    
-    .login-btn, .membership-btn {
-      flex: 1;
-      margin: 0;
-      justify-content: center;
-      text-align: center;
-      border-radius: 0;
-      height: 3rem;
-      background-color: #D9D9D9;
-      color: #292929;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    
-    .login-btn {
-      border-right: 1px solid #d9d9d9;
     }
   }
 }

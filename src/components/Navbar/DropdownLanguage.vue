@@ -21,6 +21,7 @@
         :class="{ 'icon-active': props.languageOpen }"
       />
     </div>
+    <!-- Desktop language dropdown items -->
     <div class="language__items" :class="{ 'language-menu-open': props.languageOpen }">
       <div v-for="item in props.languageItems" :key="item.id" class="language__item">
         {{ item.text }}
@@ -46,9 +47,9 @@ defineEmits(['toggleLanguage']);
 </script>
 
 <style lang="scss" scoped>
-@use '../../styles/abstract/functions';
-@use '../../styles/abstract/variables';
-@use '../../styles/components/mobile-menu';
+@use '@/styles/abstract/functions';
+@use '@/styles/abstract/variables';
+@use '@/styles/layout/mobile-menu';
 
 // Language dropdown menu
 .menu__language {
@@ -57,7 +58,17 @@ defineEmits(['toggleLanguage']);
   position: relative;
   padding: 0.5em 0.75em;
   cursor: pointer;
-  font-size: 16px;
+  font-size: functions.rem(16);
+
+  @media screen and (max-width: variables.$medium-screen) {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: stretch;
+    font-size: functions.rem(18);
+    padding: 1.6em 2em 0 2em;
+    // margin: 1.6em 0 0 0;
+    border-bottom: 2px solid #d9d9d9;
+  }
 }
 
 .language__container {
@@ -88,6 +99,11 @@ defineEmits(['toggleLanguage']);
   min-width: 192px;
   padding: 0.5rem 1rem;
 
+  @media screen and (max-width: variables.$medium-screen) {
+    // border-bottom: 2px solid #d9d9d9;
+    border-radius: 0;
+  }
+
   &.language-menu-open {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -95,6 +111,21 @@ defineEmits(['toggleLanguage']);
     z-index: 100;
     top: 120%;
     left: -55%;
+
+    @media screen and (max-width: variables.$medium-screen) {
+      grid-template-columns: 1fr;
+      font-size: functions.rem(16);
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      box-shadow: none;
+      border-top: none;
+
+      .language__container {
+        border-bottom: 2px solid #d9d9d9;
+      }
+    }
   }
 
   .language__item {
@@ -103,32 +134,6 @@ defineEmits(['toggleLanguage']);
 
     &:hover {
       color: variables.$hover-active-color;
-    }
-  }
-}
-
-// Mobile-specific styles for language dropdown
-.language-dropdown-mobile {
-  display: none;
-  img {
-    filter: brightness(0);
-
-    &.icon-active {
-      filter: brightness(0) sepia(1) hue-rotate(5deg) saturate(5);
-    }
-  }
-  .dropdown-items {
-    display: none;
-
-    &.language-dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      min-width: 100%;
-      border-top: 2px solid variables.$hover-active-color;
-      z-index: 100;
     }
   }
 }

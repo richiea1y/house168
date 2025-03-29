@@ -23,7 +23,7 @@
 
         <!-- User utility menu (login/membership) -->
         <div class="menu__users" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
-          <button class="users__login">登入</button>
+          <button class="users__login">會員登入</button>
           <button class="users__member">
             <img
               class="member__icon"
@@ -100,6 +100,5 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss">
-@use '@/styles/layout/_navbar.scss';
-@use '@/styles/components/_mobile-menu.scss';
+@use '@/styles/layout/navbar';
 </style>

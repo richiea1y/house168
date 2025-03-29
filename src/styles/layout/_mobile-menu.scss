@@ -1,0 +1,41 @@
+
+@use '../abstract/variables';
+@use '../abstract/functions';
+// @media screen and (max-width: #{variables.$medium-screen}) {}
+
+@media screen and (max-width: variables.$medium-screen) {
+  .navbar__menu {
+    display: none;
+
+    &.mobile__menu--open {
+      display: grid;
+      font-size: functions.rem(18);
+      grid-template-columns: 1fr;
+      align-content: start;
+      grid-template-rows: auto auto auto;
+      background-color: #fff;
+      height: 100vh;
+      width: 100vw;
+      padding: functions.rem(80) 0 0 0;
+      position: absolute;
+      top: 0; // temporary
+      left: 0;
+      z-index: 105;
+    }
+  }
+  
+  .menu__items {
+    // gap: functions.rem(25);
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    padding: 0;
+    margin: 0;
+
+    .menu__item {
+      border-bottom: 2px solid #D9D9D9;
+      padding: 0 2em;
+      margin: 0;
+    }
+  }
+}

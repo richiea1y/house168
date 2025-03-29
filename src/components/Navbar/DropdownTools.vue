@@ -12,6 +12,7 @@
       :class="{ 'dropdown__icon--active': dropdownStatus }"
     />
   </div>
+  <!-- Dropdown items container -->
   <div v-if="dropdownStatus" class="dropdown__items">
     <div
       v-for="item in items"
@@ -32,7 +33,6 @@
 // import { onMounted, onBeforeUnmount } from 'vue';
 
 // Data
-// const dropdownOpen = ref(false);
 const dropdownStatus = defineModel('dropdownStatus', {
   type: Boolean,
   default: false
@@ -66,8 +66,9 @@ const toggleDropdown = event => {
 </script>
 
 <style lang="scss" scoped>
-$hover-active-color: #ff8817;
-$hover-active-color-variant: #0b89fe;
+@use '../../styles/abstract/variables';
+@use '../../styles/abstract/functions';
+
 .dropdown {
   display: flex;
   align-items: center;
@@ -75,14 +76,14 @@ $hover-active-color-variant: #0b89fe;
   position: relative;
 
   &:hover {
-    color: $hover-active-color;
+    color: variables.$hover-active-color;
     .dropdown__icon {
       filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(500%) hue-rotate(0deg);
     }
   }
 
   &--active > &__label {
-    color: $hover-active-color;
+    color: variables.$hover-active-color;
   }
 
   &__icon {
@@ -95,14 +96,30 @@ $hover-active-color-variant: #0b89fe;
 
   &__items {
     position: absolute;
-    z-index: 100;
+    z-index: 106;
     top: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 1em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     background-color: white;
-    border-top: 3px solid $hover-active-color;
+    border-top: 3px solid variables.$hover-active-color;
+
+    @media screen and (max-width: variables.$medium-screen) {
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      box-shadow: none;
+      border-top: none;
+      margin-top: -1.8em;
+      margin-bottom: -0.5em;
+      padding: 1em 2.2em;
+      background-color: none;
+      grid-template-columns: 1fr;
+      font-size: functions.rem(16);
+      border-bottom: 2px solid #d9d9d9;
+    }
   }
 
   &__item {
@@ -110,21 +127,28 @@ $hover-active-color-variant: #0b89fe;
     align-items: center;
     gap: 0.4em;
     padding: 0.2em 1em 0.3em 0.2em;
+    min-width: 150px;
+    // color: #292929;
 
     &:hover {
-      color: $hover-active-color-variant;
+      color: variables.$hover-active-color-variant;
 
-      img {
+      & .dropdown__icon-container {
         background-color: #60aef6;
       }
     }
+  }
+
+  &__icon-container {
+    background-color: #a6d1f9;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border-radius: 5px;
 
     & img {
-      // filter: brightness(0);
+      min-height: 1.2em;
       padding: 0.2em;
-      max-width: 35px;
-      border-radius: 5px;
-      background-color: #98c9f7;
     }
   }
 }
