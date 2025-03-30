@@ -1,6 +1,7 @@
 <template>
   <section class="footer">
     <div class="footer__content">
+      <!-- 公司資訊 -->
       <div class="footer__content-company">
         <div class="company-logo">
           <img src="@/assets/images/footer_logo.png" alt="logo" />
@@ -13,6 +14,7 @@
           <p>地址：104台北市中山區復興北路344號7樓之1</p>
         </div>
       </div>
+      <!-- 服務項目 -->
       <div class="footer__content-service">
         <p class="footer__content-header">服務項目</p>
         <div class="footer__content-services">
@@ -24,10 +26,12 @@
           <p>顧問型影音</p>
         </div>
       </div>
+      <!-- 加入官方 LINE -->
       <div class="footer__content-contact">
-        <p class="footer-header">加入官方 LINE</p>
+        <p class="footer__contact-header">加入官方 LINE</p>
         <img src="@/assets/images/line.png" alt="" />
       </div>
+      <!-- 關注我們 -->
       <div class="footer__content-follow">
         <p class="footer__content-follow-header">關注我們</p>
         <div class="footer__content-follow-item">

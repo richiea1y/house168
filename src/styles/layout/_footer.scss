@@ -1,3 +1,5 @@
+@use '../abstract/functions';
+@use '../abstract/variables';
 .footer {
   display: flex;
   flex-direction: column;
@@ -5,140 +7,139 @@
   color: #fff;
   padding: 50px 80px;
   align-items: center;
+  
 }
 
 .footer__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  justify-content: space-around;
+
+  @media (max-width: variables.$large-screen) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: stretch;
+    gap: functions.rem(40);
+  }
+  @media (max-width: variables.$medium-screen) {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: stretch;
+    gap: functions.rem(30);
+  }
+
+  // 公司資訊
+  &-company {
+    display: flex;
+    flex-direction: column;
+    gap: functions.rem(40) functions.rem(14);
+    @media (max-width: variables.$large-screen) {
+      gap: functions.rem(10);
+    }
+    @media (max-width: variables.$medium-screen) {
+      gap: functions.rem(10);
+    }
+  }
+  // 服務項目
+  &-service {
+    display: flex;
+    flex-direction: column;
+    gap: functions.rem(48);
+    @media (max-width: variables.$large-screen) {
+      gap: functions.rem(20);
+    }
+    @media (max-width: variables.$medium-screen) {
+      gap: functions.rem(10);
+    }
+  }
+  // 加入官方 LINE
+  &-contact {
+    display: flex;
+    flex-direction: column;
+    gap: functions.rem(40);
+    @media (max-width: variables.$large-screen) {
+      gap: functions.rem(20);
+    }
+    @media (max-width: variables.$medium-screen) {
+      gap: functions.rem(10);
+    }
+
+    > img {
+      object-fit: contain;
+      width: 150px;
+    }
+  }
+  // 關注我們
+  &-follow {
+    display: flex;
+    flex-direction: column;
+    gap: functions.rem(35);
+    @media (max-width: variables.$large-screen) {
+      gap: functions.rem(15);
+    }
+    @media (max-width: variables.$medium-screen) {
+      gap: functions.rem(10);
+    }
+  }
 }
 
-.footer-content {
+// 公司資訊
+.company-description {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  p {
+    margin: 5px;
+  }
 }
 
-.company-content {
-  max-width: 300px;
-  
-  .company-logo {
-    margin-bottom: 20px;
-    height: 24px; /* Adjust this height to match your footer-header */
-    display: flex;
-    align-items: center;
-    
-    img {
-      max-height: 100%;
-      width: auto;
-    }
-  }
-
-  
-  .company-description {
-    font-size: 14px;
-    line-height: 1.5;
-    
-    p {
-      margin: 5px 0;
-    }
-  }
-}  
-
-.footer-header {
+// 服務項目
+.footer__content-header {
+  font-size: functions.rem(24);
   font-weight: bold;
-  font-size: 18px;
-  margin-top: 0;
-  margin-bottom: 20px;
-  height: 24px; /* Same height as logo container */
-  display: flex;
-  align-items: center;
+  margin: 0;
 }
-
-.service-item {
+.footer__content-services {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-
+  gap: functions.rem(10) functions.rem(20);
+  p {
+    margin: 0;
+  }
+  @media (max-width: variables.$medium-screen) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.service-item p, 
-.follow-us-item img {
-  margin: 5px 0;
+// 加入官方 LINE
+.footer__contact-header {
+  font-size: functions.rem(24);
+  font-weight: bold;
+  margin: 0;
 }
 
-.follow-us-item {
+// 關注我們
+.footer__content-follow-header {
+  font-size: functions.rem(24);
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer__content-follow-item {
   display: flex;
-  gap: 10px;
-  
+  gap: functions.rem(10);
   img {
     object-fit: contain;
+    max-width: 50px;
   }
 }
 
-.copyright-content {
+.footer__copyright {
   text-align: center;
-  font-size: 18px;
+  font-size: functions.rem(18);
   font-weight: 600;
-}
-
-/* Responsive styles for screens smaller than 430px */
-@media screen and (max-width: 430px) {
-  .footer {
-    padding: 30px 20px;
-  }
-  
-  .footer-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 25px;
-  }
-  
-  .footer-content {
-    width: 100%;
-    align-items: flex-start;
-  }
-  
-  .company-content {
-    max-width: 100%;
-    text-align: left;
-    
-    .company-logo {
-      justify-content: flex-start;
-    }
-    
-    .company-description {
-      font-size: 12px;
-    }
-  }
-  
-  .service-content {
-    text-align: left;
-  }
-  
-  .service-item {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 0px;
-    text-align: left;
-  }
-  
-  .contact-content,
-  .follow-us-content {
-    align-items: flex-start;
-    text-align: left;
-  }
-  
-  .follow-us-item {
-    justify-content: flex-start;
-  }
-  
-  .footer__copyright {
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: left;
-    width: 100%;
+  @media (max-width: variables.$medium-screen) {
+    text-align: start;
+    margin-top: functions.rem(20);
   }
 }
