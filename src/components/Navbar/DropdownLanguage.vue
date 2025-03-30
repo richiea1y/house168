@@ -10,7 +10,7 @@
         src="@/assets/images/icon/language_icon.svg"
         alt="language-icon"
       />
-      <div class="language__label">Language</div>
+      <div v-if="props.lgScreenWidth" class="language__label">Language</div>
     </div>
     <div v-else class="language__container mobile__item mobile--only">
       <div class="language__label mobile-only">語言切換</div>
@@ -40,6 +40,9 @@ const props = defineProps({
   },
   languageItems: {
     type: Array
+  },
+  lgScreenWidth: {
+    type: Boolean
   }
 });
 

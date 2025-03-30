@@ -23,13 +23,15 @@
 
         <!-- User utility menu (login/membership) -->
         <div class="menu__users" :class="{ 'mobile__menu--visible': mobileMenuOpen }">
-          <button class="users__login">會員登入</button>
+          <button v-if="!mobileMenuOpen" class="users__login">登入</button>
+          <button v-else class="users__login">會員登入</button>
           <button class="users__member">
             <img
               class="member__icon"
               src="@/assets/images/icon/member-icon.png"
               alt="account-circle-icon"
-            />會員中心
+            />
+            <div v-if="lgScreenWidth" class="member__label">會員中心</div>
           </button>
         </div>
 
@@ -38,6 +40,7 @@
           :class="{ 'mobile__menu--visible': mobileMenuOpen }"
           :language-open="languageMenuOpen"
           :mobile-flag="mobileScreen"
+          :lg-screen-width="lgScreenWidth"
           :language-items="languageItems"
           @toggle-language="toggleLanguage"
         />
@@ -54,6 +57,7 @@ import DropdownLanguage from '@/components/Navbar/DropdownLanguage.vue';
 // State
 const mobileScreen = ref(false);
 const mobileMenuOpen = ref(false);
+const lgScreenWidth = ref(false);
 
 const dropdownToolsOpen = ref(false);
 const languageMenuOpen = ref(false);
@@ -85,17 +89,23 @@ const handleResize = () => {
   mobileScreen.value = window.innerWidth <= 768;
 };
 
+const handleScreenWidth = () => {
+  lgScreenWidth.value = window.innerWidth > 1024;
+};
+
 // Lifecycle hooks
 onMounted(() => {
   // Initial check
   handleResize();
   // Add event listener
   window.addEventListener('resize', handleResize);
+  window.addEventListener('resize', handleScreenWidth);
 });
 
 onBeforeUnmount(() => {
   // Clean up
   window.removeEventListener('resize', handleResize);
+  window.removeEventListener('resize', handleScreenWidth);
 });
 </script>
 
