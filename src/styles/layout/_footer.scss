@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.footer-container {
+.footer__content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -135,7 +135,7 @@
     justify-content: flex-start;
   }
   
-  .copyright-content {
+  .footer__copyright {
     font-size: 14px;
     margin-top: 10px;
     text-align: left;

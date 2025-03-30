@@ -1,7 +1,7 @@
 <template>
   <section class="footer">
-    <div class="footer-container">
-      <div class="company-content footer-content">
+    <div class="footer__content">
+      <div class="footer__content-company">
         <div class="company-logo">
           <img src="@/assets/images/footer_logo.png" alt="logo" />
         </div>
@@ -13,9 +13,9 @@
           <p>地址：104台北市中山區復興北路344號7樓之1</p>
         </div>
       </div>
-      <div class="service-content footer-content">
-        <p class="footer-header">服務項目</p>
-        <div class="service-item">
+      <div class="footer__content-service">
+        <p class="footer__content-header">服務項目</p>
+        <div class="footer__content-services">
           <p>房屋變裝工具</p>
           <p>浮水印工具</p>
           <p>智能銷售報告書</p>
@@ -24,20 +24,20 @@
           <p>顧問型影音</p>
         </div>
       </div>
-      <div class="contact-content footer-content">
+      <div class="footer__content-contact">
         <p class="footer-header">加入官方 LINE</p>
         <img src="@/assets/images/line.png" alt="" />
       </div>
-      <div class="follow-us-content footer-content">
-        <p class="footer-header">關注我們</p>
-        <div class="follow-us-item">
+      <div class="footer__content-follow">
+        <p class="footer__content-follow-header">關注我們</p>
+        <div class="footer__content-follow-item">
           <img src="@/assets/images/ig.png" alt="" />
           <img src="@/assets/images/fb.png" alt="" />
           <img src="@/assets/images/yt.png" alt="" />
         </div>
       </div>
     </div>
-    <div class="copyright-content footer-content">
+    <div class="footer__copyright">
       <p>house168.com©all right reserve</p>
     </div>
   </section>
