@@ -1,3 +1,5 @@
+@use '../abstract/variables';
+@use '../abstract/functions';
 .feature-grid-container {
   width: 100%;
   background: rgb(255,228,152);
@@ -7,7 +9,7 @@
 }
 
 .feature-header {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 4rem auto;
   padding: 0 1.5rem;
   display: flex;
@@ -15,14 +17,15 @@
   align-items: flex-start;
   color: #000;
 
-  p:first-child {
+  .feature-header-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1.7rem;
   }
   
-  p:last-child {
-    font-size: 0.8rem;
+  &-description {
+    font-size: functions.rem(16);
+    font-weight: 500;
     line-height: 1.6;
     max-width: 1000px;
   }
@@ -46,6 +49,7 @@
 
   &:hover {
     background-color: rgba(255, 237, 158, 0.85);
+    // background-color: #fff;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
   }
@@ -59,7 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(255,200,51);
+  background: rgb(255, 200, 51);
   background: linear-gradient(135deg, rgba(255,200,51,1) 0%, rgba(99,188,194,1) 100%);
   border-radius: 12px;
   padding: 15px;
