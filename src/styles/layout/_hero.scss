@@ -248,82 +248,60 @@
 
 .hero__tranformation {
   display: flex;
-  background-color: #FFF;
-  border-radius: 2rem;
+  align-items: center;
   justify-content: space-between;
-  padding: functions.rem(20);
+  padding: 4em 4em;
   margin: 3em auto;
+  background-color: #FFF;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
 }
-
-
-
-.tools-intro-container {
+// 房屋變裝內容
+.tranformation-content {
   max-width: 450px;
-  // padding: 0 functions.rem(20);
-  
-  @media (max-width: 430px) {
-    padding: 0 1.5rem;
-    text-align: center;
-    order: 1;
-  }
-  
-  @media (min-width: 768px) {
-    width: 45%;
+  padding: 0 1em;
+
+  p {
+    margin: 0;
   }
 
-  .tools-intro1 {
+  // 房屋變裝內容 標題與文字
+  &__header {
     display: flex;
     flex-direction: column;
     gap: 0;
-    
-    .tools-intro1-title {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0;
-      font-size: functions.rem(30);
-      font-weight: 600;
-      margin-bottom: functions.rem(30);
-
-      p {
-        margin: 0;
-      }
-    }
-    
-    .tools-intro1-content {
-      display: flex;
-      flex-wrap: wrap;
-      font-size: functions.rem(16);
-      margin-bottom: 0.5rem;
-      
-      p {
-        margin: 0;
-      }
-    }
   }
   
-  .tools-intro2 {
-    margin-top: 4rem;
-    padding: 0.75rem 2rem;
-    background-image: linear-gradient(to right, #8DC8FF 0%, #0B89FE 100%);
-    color: #FFFF;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-size: functions.rem(24);
     font-weight: 600;
-    cursor: pointer;
-    width: 200px;
-    height: 60px;
-
-    @media (max-width: 430px) {
-      order: 3;
-      margin-top: 2rem;
-      font-size: 1rem;
-      width: 150px;
-      height: 50px;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-    }
+    margin-bottom: 1em;
+    gap: 0;
   }
+
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: functions.rem(16);
+    margin-bottom: 0.5rem;
+
+  }
+}
+
+  
+  
+.tranformation-content__btn {
+  margin-top: 4rem;
+  padding: 0.75rem 2rem;
+  background-image: linear-gradient(to right, #8DC8FF 0%, #0B89FE 100%);
+  color: #FFFF;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 200px;
+  height: 60px;
 }

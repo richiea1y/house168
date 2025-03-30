@@ -69,7 +69,7 @@ defineProps({
     &.card-bg-color-3 {
       background-color: variables.$card-bg-color-3;
     }
-    img {
+    & > img {
       max-width: 40px;
     }
   }

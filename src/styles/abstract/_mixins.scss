@@ -15,14 +15,14 @@
 }
 
 @mixin showcase-label ($status: 'before') {
-  max-width: 150px;
+  max-width: 180px;
   z-index: 1;
   position: absolute;
   @if ($status == 'before') {
-    top: functions.rem(30);
+    top: functions.rem(40);
     left: functions.rem(0);
   } @else {
-    bottom: functions.rem(30);
+    bottom: functions.rem(40);
     right: functions.rem(0);
   }
   & > img {
@@ -33,10 +33,10 @@
 @mixin showcase-img ($status: 'before') {
   @if ($status == 'before') {
     max-width: 350px;
-    margin-left: 7em; // Offset the image
+    margin-left: 8em; // Offset the image
   } @else {
     max-width: 350px;
-    margin-right: 7em; // Offset the image
+    margin-right: 8em; // Offset the image
   }
   & > img {
     width: 100%;

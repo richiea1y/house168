@@ -65,7 +65,7 @@
 
     > img {
       object-fit: contain;
-      width: 150px;
+      width: 130px;
     }
   }
   // 關注我們
@@ -83,7 +83,14 @@
 }
 
 // 公司資訊
+.company-logo {
+  img {
+    max-width: 150px;
+  }
+}
+
 .company-description {
+  font-size: functions.rem(14);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +102,7 @@
 
 // 服務項目
 .footer__content-header {
-  font-size: functions.rem(24);
+  font-size: functions.rem(18);
   font-weight: bold;
   margin: 0;
 }
@@ -103,6 +110,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: functions.rem(10) functions.rem(20);
+  font-size: functions.rem(14);
   p {
     margin: 0;
   }
@@ -113,14 +121,14 @@
 
 // 加入官方 LINE
 .footer__contact-header {
-  font-size: functions.rem(24);
+  font-size: functions.rem(16);
   font-weight: bold;
   margin: 0;
 }
 
 // 關注我們
 .footer__content-follow-header {
-  font-size: functions.rem(24);
+  font-size: functions.rem(18);
   font-weight: bold;
   margin: 0;
 }
@@ -130,7 +138,7 @@
   gap: functions.rem(10);
   img {
     object-fit: contain;
-    max-width: 50px;
+    max-width: 40px;
   }
 }
 

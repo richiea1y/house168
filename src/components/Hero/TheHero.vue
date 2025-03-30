@@ -26,13 +26,13 @@
     </div>
     <div class="hero__tranformation">
       <ShowCase />
-      <div class="tools-intro-container">
-        <div class="tools-intro1">
-          <div class="tools-intro1-title">
+      <div class="tranformation-content">
+        <div class="tranformation-content__header">
+          <div class="tranformation-content__title">
             <p>主打工具-房屋變裝</p>
             <p>房仲成交神器</p>
           </div>
-          <div class="tools-intro1-content">
+          <div class="tranformation-content__text">
             <p>透過house168的房屋變裝服務，</p>
             <p>我們利用最新的AI技術，</p>
             <p>將空置或髒亂的房屋重新裝扮，</p>
@@ -45,7 +45,7 @@
             <p>讓您的房地產業務更上一層樓。</p>
           </div>
         </div>
-        <button class="tools-intro2">瞭解更多</button>
+        <button class="tranformation-content__btn">瞭解更多</button>
       </div>
     </div>
   </div>
