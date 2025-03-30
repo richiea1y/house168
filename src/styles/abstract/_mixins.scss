@@ -14,6 +14,18 @@
   }
 }
 
+@mixin highlight-flag {
+  max-width: 250px;
+    position: absolute;
+    top: -2px;
+    left: -1px;
+    font-size: functions.rem(20);
+    padding: 0.25em 1.2em;
+    color: #fff;
+    border-radius: 25px 0px 30px 0px;
+    border: 1px solid #fff;
+}
+
 @mixin gradient-button ($color: "primary") {
   max-width: 150px;
   font-size: functions.rem(18);
