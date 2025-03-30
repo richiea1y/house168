@@ -54,11 +54,17 @@
     // background-color: #fff;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+
+    & .card-icon {
+      background-color: rgb(255, 184, 51);
+      background-image: none;
+    }
   }
 }
 
 // Card Icon
 .card-icon {
+  background-color: #ffffff; /* Add base style */
   width: 80px;
   height: 80px;
   margin-bottom: 1.5rem;
