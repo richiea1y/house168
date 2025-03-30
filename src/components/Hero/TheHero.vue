@@ -22,36 +22,7 @@
       </div>
     </div>
     <div class="hero-content2-container">
-      <div class="hero-content2-text-container1">
-        <div class="content2-text1-img img-container">
-          <img src="@/assets/images/content2-img1.png" alt="" />
-        </div>
-        <div class="content2-text1 text-container">
-          <p>創新科技 引領未來</p>
-          <p>
-            house168，不斷追求創新技術， 引領未來趨勢，為您提供卓越服務， 成就房仲夥伴的交易目標。
-          </p>
-        </div>
-      </div>
-      <div class="hero-content2-text-container2">
-        <div class="content2-text2-img img-container">
-          <img src="@/assets/images/content2-img2.png" alt="" />
-        </div>
-        <div class="content2-text2 text-container">
-          <p>儲值點數 終生有效</p>
-          <p>儲值點數，不受時間限制， 長期使用我們的服務， 充分發揮您的業務潛力。</p>
-        </div>
-      </div>
-      <div class="hero-content2-text-container3">
-        <div class="content2-text3-img img-container">
-          <img src="@/assets/images/content2-img3.png" alt="" />
-        </div>
-        <div class="content2-text3 text-container">
-          <p>專業服務 成就卓越</p>
-          <p>house168，您成功的一大助力， 資訊整合、深度服務， 有效幫助成為您最信賴的合作夥伴。</p>
-        </div>
-        <img src="@/assets/images/msg-img.png" alt="" class="msg-img" />
-      </div>
+      <HighlightCard :highlight-cards="hightlightCards" />
     </div>
     <div class="hero-content3-container">
       <div class="tools-img-container">
@@ -88,8 +59,36 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue';
+import HighlightCard from '@/components/Hero/HighlightCard.vue';
 
-<style lang="scss">
-@use '@/styles/layout/_hero.scss';
-</style>
+const hightlightCards = ref([
+  {
+    id: 1,
+    highlightImg: '/src/assets/images/content2-img1.png',
+    highlightTitle: '創新科技 引領未來',
+    highlightContent: [
+      'house168，不斷追求創新技術，',
+      '引領未來趨勢，為您提供卓越服務，',
+      '成就房仲夥伴的交易目標。'
+    ]
+  },
+  {
+    id: 2,
+    highlightImg: '/src/assets/images/content2-img2.png',
+    highlightTitle: '儲值點數 終生有效',
+    highlightContent: ['儲值點數，不受時間限制，', '長期使用我們的服務，', '充分發揮您的業務潛力。']
+  },
+  {
+    id: 3,
+    highlightImg: '/src/assets/images/content2-img3.png',
+    highlightTitle: '專業服務 成就卓越',
+    highlightContent: [
+      'house168，您成功的一大助力，',
+      '資訊整合、深度服務，',
+      '有效幫助成為您最信賴的合作夥伴。'
+    ]
+  }
+]);
+</script>
