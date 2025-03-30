@@ -14,6 +14,33 @@
   }
 }
 
+@mixin gradient-button ($color: "primary") {
+  max-width: 150px;
+  font-size: functions.rem(18);
+  font-weight: 600;
+  background-color: #fff;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  @if ($color == "primary") {
+    color: #FFC15E;
+    border: 1px solid #FFC15E;
+    &:hover {
+      background-color: #f8ca7f;
+      color: #fff;
+    }
+  } @else if ($color == "secondary") {
+    color: #55A3EC;
+    border: 1px solid #55A3EC;
+    &:hover {
+      background-color: #72b1ed;
+      color: #fff;
+    }
+  }
+  border-radius: 15px;
+}
+
 @mixin showcase-label ($status: 'before') {
   max-width: 180px;
   z-index: 1;

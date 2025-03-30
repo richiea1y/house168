@@ -1,5 +1,8 @@
 <template>
-  <div class="highlight-section">
+  <div class="highlight__section">
+    <HighlightCard :highlightCards="highlightCards" />
+
+    <!-- Old Code -->
     <div class="highlight-header">
       <h2 class="highlight-title">讓我們為您提供助力</h2>
       <p class="highlight-description">
@@ -52,7 +55,26 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import HighlightCard from './HighlightCard.vue';
+
+const highlightCards = [
+  {
+    id: 1,
+    title: 'house168 行銷工具',
+    description:
+      '若您想提高房屋銷售的成交可能性、增加物件受青睞的機率，您可以使用house168工具網所提供的強大工具！',
+    image: '@/assets/images/highlight-before.png'
+  }
+  // {
+  //   id: 2,
+  //   title: 'house168 房屋交易網',
+  //   description:
+  //     '若您已經準備好一切，您可以前往house168房屋交易平台，我們將協助您更快更輕鬆找到優秀的買家與賣家！',
+  //   image: '@/assets/images/website-page.png'
+  // }
+];
+</script>
 
 <style lang="scss">
 @use '@/styles/layout/_highlight.scss';
