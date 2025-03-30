@@ -253,13 +253,27 @@
   padding: 4em 4em;
   margin: 3em auto;
   background-color: #FFF;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.3);
   border-radius: 2rem;
+
+  @media (max-width: variables.$large-screen) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
 }
 // 房屋變裝內容
 .tranformation-content {
   max-width: 450px;
   padding: 0 1em;
+
+  @media (max-width: variables.$large-screen) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   p {
     margin: 0;
@@ -270,6 +284,10 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    // @media (max-width: variables.$large-screen) {
+    //   align-items: center;
+    //   justify-content: center;
+    // }
   }
   
   &__title {
@@ -279,6 +297,11 @@
     font-weight: 600;
     margin-bottom: 1em;
     gap: 0;
+    @media (max-width: variables.$large-screen) {
+      // font-size: functions.rem(20);
+      margin-top: 2em;
+      align-items: center;
+    }
   }
 
   &__text {
@@ -288,20 +311,18 @@
     margin-bottom: 0.5rem;
 
   }
-}
 
-  
-  
-.tranformation-content__btn {
-  margin-top: 4rem;
-  padding: 0.75rem 2rem;
-  background-image: linear-gradient(to right, #8DC8FF 0%, #0B89FE 100%);
-  color: #FFFF;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  cursor: pointer;
-  width: 200px;
-  height: 60px;
+  &__btn {
+    margin-top: 4rem;
+    padding: 0.75rem 2rem;
+    background-image: linear-gradient(to right, #8DC8FF 0%, #0B89FE 100%);
+    color: #FFFF;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 200px;
+    height: 60px;
+  }
 }
