@@ -24,18 +24,18 @@
     <div class="hero-content2-container">
       <HighlightCard :highlight-cards="hightlightCards" />
     </div>
-    <div class="hero-content3-container">
-      <div class="tools-img-container">
-        <div class="tools-img1">
+    <div class="hero__tranformation">
+      <div class="hero__tranformation-showcase">
+        <div class="showcase__label--before">
           <img src="@/assets/images/before-interior.png" alt="" />
         </div>
-        <div class="tools-img2">
+        <div class="showcase__label--after">
           <img src="@/assets/images/after-interior.png" alt="" />
         </div>
-        <div class="tools-img3">
+        <div class="showcase__img--before">
           <img src="@/assets/images/before-interior-flag.png" alt="" />
         </div>
-        <div class="tools-img4">
+        <div class="showcase__img--after">
           <img src="@/assets/images/after-interior-flag.png" alt="" />
         </div>
       </div>

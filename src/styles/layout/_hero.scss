@@ -246,7 +246,7 @@
   }
 }
 
-.hero-content3-container {
+.hero__tranformation {
   width: 100%;
   margin: 8rem auto 4rem;
   padding-top: 4rem;
@@ -271,7 +271,7 @@
   }
 }
 
-.tools-img-container {
+.hero__tranformation-showcase {
   position: relative;
   width: 100%;
   height: 400px;
@@ -286,8 +286,8 @@
     width: 50%;
   }
   
-  .tools-img1, 
-  .tools-img2 {
+  .showcase__label--before,
+  .showcase__label--after {
     position: absolute;
     width: 80%;
     height: auto;
@@ -301,8 +301,8 @@
     }
   }
 
-  .tools-img3,
-  .tools-img4 {
+  .showcase__img--before,
+  .showcase__img--after {
     position: absolute;
     width: 80%;
     height: auto;
@@ -315,7 +315,7 @@
     }
   }
   
-  .tools-img1 {
+  .showcase__img--before {
     top: 0px;
     left: 240px;
     width: 400px;
@@ -328,7 +328,7 @@
     }
   }
   
-  .tools-img2 {
+  .showcase__img--after {
     top: 150px;
     left: 50px;
     width: 400px;
@@ -341,7 +341,7 @@
     }
   }
 
-  .tools-img3 {
+  .showcase__img--after {
     top: 30px;
     left: 90px;
     z-index: 3;
@@ -352,7 +352,7 @@
     }
   }
 
-  .tools-img4 {
+  .showcase__img--after {
     top: 350px;
     left: 400px;
     z-index: 4;
