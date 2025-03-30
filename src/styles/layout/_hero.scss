@@ -43,7 +43,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 3.5rem;
+      gap: 1rem;
 
       @media (max-width: variables.$medium-screen) {
         gap: 2rem;
@@ -84,23 +84,23 @@
   }
 
   img {
-    width: 350px;
+    max-width: 300px;
     height: auto;
 
-    @media (max-width: 430px) {
-      width: 150px;
+    @media (max-width: variables.$medium-screen) {
+      max-width: 250px;
     }
   }
 
   p:last-of-type {
     font-size: 2rem;
 
-    @media (max-width: 430px) {
+    @media (max-width: variables.$medium-screen) {
       font-size: 1.5rem;
     }
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: variables.$medium-screen) {
     align-items: center;
     text-align: center;
   }
@@ -111,13 +111,14 @@
   flex-direction: row;
   justify-content: flex-start;
   align-self: flex-start;
-  gap: 3rem;
+  gap: 2rem;
 
-  @media (max-width: 430px) {
+  @media (max-width: variables.$medium-screen) {
+    // max-width: 300px;
     flex-direction: column;
-    gap: 2rem;
     align-self: center;
-    width: 60%;
+    gap: 2rem;
+    // width: 60%;
     margin-bottom: 2rem;
   }
 
@@ -144,8 +145,11 @@
       color: #2194FF;
     }
 
-    @media (max-width: 430px) {
+    @media (max-width: variables.$medium-screen) {
       font-size: 1.2rem;
+      max-width: 350px;
+      height: 60px;
+      padding: 0.5rem 4rem;
     }
   }
 }
