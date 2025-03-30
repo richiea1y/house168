@@ -73,6 +73,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding-left: functions.rem(3);
   color: #000;
 
   p {
@@ -111,6 +112,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-self: flex-start;
+  padding-left: functions.rem(3);
   gap: 2rem;
 
   @media (max-width: variables.$medium-screen) {
@@ -133,16 +135,26 @@
     font-size: 1rem;
     font-weight: 600;
     white-space: nowrap;
+    cursor: pointer;
+    transition: all 1s ease;
 
     &:first-child {
       background-image: linear-gradient(to right, #FFEEB7 0%, #FDE46B 100%);
       color: #3E3E3E;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      &:hover {
+        background-image: linear-gradient(to left, #FFEEB7 0%, #FDE46B 100%);
+      }
     }
 
     &:last-child {
       border: 1.5px solid #2094FF;
       color: #2194FF;
+      &:hover {
+        background-image: linear-gradient(to right, #b2d4f4 0%, #2094FF 100%);
+        color: #fff;
+        border: none;
+      }
     }
 
     @media (max-width: variables.$medium-screen) {
