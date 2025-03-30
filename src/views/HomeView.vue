@@ -1,7 +1,7 @@
 <script setup>
 import Navbar from '@/components/Navbar/Navbar.vue';
 import TheHero from '@/components/Hero/TheHero.vue';
-import FeatureGrid from '@/components/FeatureGrid.vue';
+import FeatureTools from '@/components/FeatureTools/FeatureTools.vue';
 import PromotionBanner from '@/components/PromotionBanner.vue';
 import TestimonialSlider from '@/components/TestimonialSlider.vue';
 import HighlightSection from '@/components/HighlightSection.vue';
@@ -12,7 +12,7 @@ import TheFooter from '@/components/TheFooter.vue';
   <div id="app">
     <Navbar />
     <TheHero />
-    <FeatureGrid />
+    <FeatureTools />
     <PromotionBanner />
     <TestimonialSlider />
     <HighlightSection />
