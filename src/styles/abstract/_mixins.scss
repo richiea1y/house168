@@ -1,3 +1,5 @@
+@use '../abstract/functions';
+
 @mixin flexBox($direction, $alignItems, $justifyContent, $gap: 0) {
   display: flex;
   flex-direction: $direction;
@@ -12,15 +14,43 @@
   }
 }
 
-@mixin nav-link-dropdown-icon__active ($transform-deg: 0deg) {
-  img {
-    filter: brightness(0);
+@mixin showcase-label ($status: 'before') {
+  max-width: 150px;
+  z-index: 1;
+  position: absolute;
+  @if ($status == 'before') {
+    top: functions.rem(30);
+    left: functions.rem(0);
+  } @else {
+    bottom: functions.rem(30);
+    right: functions.rem(0);
+  }
+  & > img {
+    width: 100%;
+  }
+}
 
-    &.icon-active {
-      // filter: brightness(1) sepia(1) hue-rotate(5deg) saturate(5);
-      filter: brightness(0) saturate(100%) invert(63%) sepia(100%) saturate(500%) hue-rotate(0deg);
+@mixin showcase-img ($status: 'before') {
+  @if ($status == 'before') {
+    max-width: 350px;
+    margin-left: 7em; // Offset the image
+  } @else {
+    max-width: 350px;
+    margin-right: 7em; // Offset the image
+  }
+  & > img {
+    width: 100%;
+  }
+}
 
-      transform: rotate($transform-deg);
-    }
+@mixin showcase-container ($status: 'before') {
+  display: flex;
+  align-items: center;
+  position: relative;
+  &-label {
+    @include showcase-label($status);
+  }
+  &-img {
+    @include showcase-img($status);
   }
 }
