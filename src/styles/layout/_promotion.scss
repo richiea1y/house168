@@ -1,3 +1,5 @@
+@use '@/styles/abstract/functions';
+
 .promotion-banner {
   position: relative;
   display: flex;
@@ -14,97 +16,119 @@
   .decoration {
     position: absolute;
     z-index: 1;
+    width: auto; // 添加這行來確保寬度按比例縮放
     
     &.coin-1 {
-      top: 25%;
-      left: 30%;
-      height: 15%;
+      top: 22%;
+      left: 27%;
       z-index: 3;
+      width: 9vw; // 使用 viewport width 單位
+      min-width: 20px; // 設置最小寬度
+      max-width: 140px; // 設置最大寬度
     }
     
     &.coin-2 {
-      top: 10%;
-      left: 36%;
-      height: 10.5%;
+      top: 4%;
+      left: 34%;
+      // height: 10.5%;
       z-index: 3;
+      width: 7vw;
+      min-width: 15px;
+      max-width: 90px;
     }
     
     &.coin-3 {
       top: 35%;
       left: 38%;
-      height: 11%;
       z-index: 3;
+      width: 7.5vw;
+      min-width: 18px;
+      max-width: 95px;
     }
     
     &.coin-4 {
       top: 18%;
       left: 42%;
-      height: 9%;
-      z-index: 3;
+      width: 6.5vw;
+      min-width: 15px;
+      max-width: 75px;
     }
     
     &.coin-5 {
-      top: 12%;
-      left: 93%;
-      height: 10.5%;
-      z-index: 3;
+      top: 14%;
+      right: 3%;
+      width: 8vw;
+      min-width: 15px;
+      max-width: 80px;
     }
     
     &.coin-6 {
-      top: 45%;
+      top: 43%;
       right: 0%;
-      height: 90%;
+      // height: 90%;
+      width: 23vw;
+      min-width: 40px;
+      max-width: 580px;
     }
-    
+     // 三角形和波浪的調整
     &.triangle-1 {
       top: 22%;
       right: 45%;
-      height: 30px;
-      transform: rotate(188deg);
+      width: 5vw;
+      height: auto;
+      transform: rotate(184deg);
     }
     
     &.triangle-2 {
       top: 16%;
       right: 44%;
-      height: 45px;
-      transform: rotate(188deg);
+      width: 3.5vw;
+      height: auto;
+      transform: rotate(183deg);
     }
 
     &.triangle-3 {
       bottom: 30%;
       right: 16%;
-      height: 33px;
+      width: 5vw;
+      height: auto;
       transform: rotate(25deg);
     }
 
     &.triangle-4 {
       bottom: 35%;
       right: 15%;
-      height: 45px;
-      transform: rotate(-18deg);
+      width: 3.5vw;
+      height: auto;
+      transform: rotate(-20deg);
     }
+    // 波浪的調整
     &.wave-1 {
       bottom: 40%;
-      right: 43%;
-      height: 15px;
+      right: 44%;
+      width: 3.5vw;
+      height: auto;
       transform: rotate(-8deg);
     }
     &.wave-2 {
       bottom: 37%;
-      right: 42.7%;
-      height: 18px;
-      transform: rotate(-8deg);
+      right: 43.5%;
+      width: 3vw;
+      height: auto;
+      transform: rotate(-5deg);
     }
     &.wave-3 {
       top: 19%;
       right: 12%;
-      height: 23px;
+      width: 4.5vw;
+      height: auto;
       transform: rotate(155deg);
     }
     &.wave-4 {
       top: 23%;
       right: 11.5%;
-      height: 26px;
+      width: 3.5vw;
+      height: auto;
       transform: rotate(175deg);
     }   
   }
@@ -135,35 +159,36 @@
     align-items: flex-start;
     
     .promotion-subtitle {
-      font-size: 1.8rem;
+      font-size: 2.5vw;
       font-weight: 800;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.2em;
       color: #333;
     }
     
     .promotion-title {
-      font-size: 5rem;
+      font-size: 6.5vw;
       font-weight: 900;
-      margin: 0.5rem 0 1rem;
+      margin: 0.1em 0;
       color: #0091FF; // Brighter blue to match image
       line-height: 1;
     }
     
     .promotion-description {
-      font-size: 1.6rem;
+      font-size: 2vw;
       font-weight: 900;
       margin-top: 0;
-      margin-bottom: 3rem;
+      margin-bottom: 1em;
       color: #333;
     }
     
     .promotion-button {
       background-color: white;
       color: #0091FF;
-      border: 3.4px solid #0091FF;
-      border-radius: 25px;
-      padding: 0.6rem 2.2rem;
-      font-size: 1.4rem;
+      border: 0.4vw solid #0091FF;
+      border-radius: 50px;
+      padding: 0.6em 2.2em;
+      
+      font-size: 1.3vw;
       font-weight: 500;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -171,49 +196,6 @@
       &:hover {
         background-color: #0091FF;
         color: white;
-      }
-    }
-  }
-
-  // Responsive styles
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 1rem;
-    
-    .promotion-left, .promotion-right {
-      flex: 0 0 100%;
-    }
-    
-    .promotion-left {
-      margin-bottom: 1rem;
-      
-      .shopping-illustration {
-        max-height: 150px;
-      }
-    }
-    
-    .promotion-right {
-      align-items: center;
-      text-align: center;
-      
-      .promotion-title {
-        font-size: 3rem;
-      }
-    }
-    
-    // Adjust decorative elements for mobile
-    .decoration {
-      &.coin-1, &.coin-2, &.coin-3, &.coin-4 {
-        width: 20px;
-        height: 20px;
-      }
-      
-      &.triangle-1, &.triangle-2 {
-        width: 20px;
-      }
-      
-      &.wave-1 {
-        width: 20px;
       }
     }
   }
