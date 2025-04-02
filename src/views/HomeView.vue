@@ -16,7 +16,7 @@ import TheFooter from '@/components/TheFooter.vue';
     <FeatureTools />
     <PromotionBanner />
     <FeedbackSlider />
-    <TestimonialSlider />
+    <!-- <TestimonialSlider /> -->
     <HighlightSection />
     <TheFooter />
   </div>
