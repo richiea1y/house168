@@ -11,6 +11,8 @@
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }"
+        slides-per-view="auto"
+        centerInsufficientSlides="true"
       >
         <SliderCard v-for="item in feedback" :key="item.id" :feedback="item" />
       </swiper-container>

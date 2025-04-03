@@ -41,6 +41,14 @@
   background: transparent !important;
   box-shadow: none !important;
   
+  &:hover {
+    background-color: #0B89FE !important;
+    border-radius: 10px !important;
+
+    &::after {
+      color: #fff !important;
+    }
+  }
   
   // Swiper's navigation buttons (prev/next) are actually created using ::after pseudo-elements
   // The circle shape comes from these pseudo-elements, not from the button itself
