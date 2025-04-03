@@ -44,9 +44,9 @@ defineProps({
   padding: 2em 2em;
   margin: 1em 1em;
   background-color: #fff;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
   border-radius: 25px;
-  max-width: 450px;
+  max-width: 360px;
   // position: relative;
 
   @media screen and (max-width: variables.$large-screen) {
@@ -71,25 +71,26 @@ defineProps({
   }
 
   &-img {
+    max-width: 120px;
     @media screen and (max-width: variables.$large-screen) {
       max-width: 70px;
     }
   }
 
   &-name {
-    font-size: functions.rem(19);
+    font-size: functions.rem(16);
     font-weight: 600;
     @media screen and (max-width: variables.$large-screen) {
-      font-size: functions.rem(14);
+      font-size: functions.rem(12);
       font-weight: 500;
     }
   }
 
   &-role {
-    font-size: functions.rem(17);
+    font-size: functions.rem(14);
     font-weight: 500;
     @media screen and (max-width: variables.$large-screen) {
-      font-size: functions.rem(14);
+      font-size: functions.rem(12);
     }
   }
 }
@@ -100,7 +101,7 @@ defineProps({
   justify-content: center;
   align-items: center;
   gap: 0em;
-  margin: 0 2em;
+  margin: 0 1.5em;
 
   &-icon {
     display: flex;
@@ -123,11 +124,11 @@ defineProps({
 
   &-text {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: functions.rem(17);
+    font-size: functions.rem(14);
     font-weight: 400;
     text-align: center;
     color: #3c3c3c;
-    line-height: 1.5em;
+    line-height: 1.4em;
 
     @media screen and (max-width: variables.$large-screen) {
       font-size: functions.rem(12);
