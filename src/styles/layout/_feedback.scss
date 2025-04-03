@@ -38,8 +38,23 @@
 .swiper-button-prev {
   position: static;  // Override Swiper's absolute positioning
   margin: 0;
-  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
   
+  
+  // Swiper's navigation buttons (prev/next) are actually created using ::after pseudo-elements
+  // The circle shape comes from these pseudo-elements, not from the button itself
+  // The button's visual appearance (including the circle background) is created by the ::after pseudo-element
+  &::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none !important;
+    border: 1.5px solid #0B89FE;
+    border-radius: 10px !important;  /* Remove the circular shape */
+    width: 100%;
+    height: 100%;
+  }
 }
 
 

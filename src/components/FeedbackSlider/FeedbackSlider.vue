@@ -46,7 +46,9 @@ avatar
 <script setup>
 import { ref } from 'vue';
 import SliderCard from '@/components/FeedbackSlider/SliderCard.vue';
-import 'swiper/swiper-bundle.css'; // import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+// import 'swiper/swiper-bundle.css'; // import Swiper styles
 
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
@@ -95,4 +97,19 @@ const marqueeImages = ref([
 
 <style lang="scss">
 @use '@/styles/layout/_feedback.scss';
+
+// Add these styles directly in the component
+:root {
+  --swiper-navigation-size: 20px; // Control arrow size
+  --swiper-theme-color: #fff; // Control arrow color
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  &::after {
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
 </style>
