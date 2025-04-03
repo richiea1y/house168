@@ -10,8 +10,30 @@
         <SliderCard v-for="item in feedback" :key="item.id" :feedback="item" />
       </swiper-container>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-btn">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div class="agent-icon-marquee">
+      <div class="marquee-content">
+        <!-- First set of images -->
+        <img
+          v-for="(img, index) in marqueeImages"
+          :key="index"
+          :src="img"
+          alt=""
+          class="agent-icon"
+        />
+        <!-- Duplicate set of images for seamless loop -->
+        <img
+          v-for="(img, index) in marqueeImages"
+          :key="'duplicate-' + index"
+          :src="img"
+          alt=""
+          class="agent-icon"
+        />
+      </div>
+    </div>
   </div>
 </template>
 avatar
@@ -60,10 +82,10 @@ const feedback = ref([
 ]);
 
 // Define marquee images
-// const marqueeImages = ref([
-//   new URL('@/assets/images/icon/agent-logo.png', import.meta.url).href,
-//   new URL('@/assets/images/icon/agent-logo.png', import.meta.url).href
-// ]);
+const marqueeImages = ref([
+  new URL('@/assets/images/icon/agent-logo.png', import.meta.url).href,
+  new URL('@/assets/images/icon/agent-logo.png', import.meta.url).href
+]);
 </script>
 
 <style lang="scss">
