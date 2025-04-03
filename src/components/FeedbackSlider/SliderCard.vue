@@ -47,6 +47,7 @@ defineProps({
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 25px;
   max-width: 450px;
+  // position: relative;
 
   @media screen and (max-width: variables.$large-screen) {
     flex-direction: column;

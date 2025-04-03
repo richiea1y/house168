@@ -1,3 +1,6 @@
+@use "@/styles/abstract/functions"; 
+@use "@/styles/abstract/variables";
+
 .feedback {
   // margin: 0 auto;
   // position: relative;
@@ -5,16 +8,21 @@
   background-color: #EFEFEF;
 }
 
+.feedback-header > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vw;
+  font-size: functions.rem(28);
+  font-weight: 800;
+
+  @media (max-width: variables.$large-screen) {
+    font-size: functions.rem(20);
+    // margin-bottom: ;
+  }
+}
+
 .slider__container {
   position: relative;
 }
 
-.mySwiper {
-  background-color: azure;
-}
-
-.swiper-slide {
-  text-align: center;
-  background-color: #f3f4ad;  
-  
-}
