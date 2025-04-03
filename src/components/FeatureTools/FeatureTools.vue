@@ -9,8 +9,7 @@
 
     <div class="feature-carousel">
       <div class="carousel-container">
-        <swiper
-          :modules="[SwiperNavigation, SwiperPagination]"
+        <swiper-container
           :slides-per-view="slidesPerView"
           :slides-per-group="slidesPerView"
           :space-between="20"
@@ -18,19 +17,22 @@
           :loopFillGroupWithBlank="true"
           :navigation="{
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'swiper-button-disabled'
           }"
-          :pagination="{ clickable: true }"
+          :pagination="false"
           :breakpoints="swiperBreakpoints"
           class="mySwiper"
         >
           <swiper-slide v-for="(feature, index) in features" :key="index">
             <FeatureCard :feature="feature" />
           </swiper-slide>
-        </swiper>
+        </swiper-container>
 
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-btn">
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -38,14 +40,15 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation as SwiperNavigation, Pagination as SwiperPagination } from 'swiper/modules';
 import FeatureCard from './FeatureCard.vue';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import { register } from 'swiper/element/bundle';
+register();
 
 // Responsive settings
 const windowWidth = ref(window.innerWidth);

@@ -38,7 +38,7 @@
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 12px;
   padding: 1.5rem;
-  height: 100%;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -134,10 +134,11 @@
     content: url('@/assets/images/arrow-icon1.png');
     position: absolute;
     top: -5px;
+    left: -5px;
     width: 8px;
     height: 8px;
     transform: scale(0.6);
-    transition: content 0.3s ease;
+    transition: content 0s ease;
   }
 }
 
