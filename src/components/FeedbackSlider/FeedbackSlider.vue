@@ -1,79 +1,71 @@
 <template>
-  <!-- <div class="testimonial-header">
-    <p>––&emsp;&ensp;與我們合作的夥伴都說&ensp;&emsp;––</p>
-  </div> -->
-
-  <!-- Slider main container -->
-  <div class="swiper feedbackSlider" :modules="[SwiperNavigation]">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <!-- <SliderCard :feedback="testimonials" /> -->
-      ...
+  <div class="feedback">
+    <div class="feedback-header">
+      <p>––&emsp;&ensp;與我們合作的夥伴都說&ensp;&emsp;––</p>
     </div>
-    <!-- navigation buttons -->
+
+    <div class="slider__container">
+      <!-- Slider main container -->
+      <swiper-container navigation="true">
+        <SliderCard v-for="item in feedback" :key="item.id" :feedback="item" />
+      </swiper-container>
+    </div>
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
 </template>
+avatar
 
 <script setup>
-// import { ref } from 'vue';
-// import SliderCard from '@/components/FeedbackSlider/SliderCard.vue';
-import Swiper from 'swiper';
-import { Navigation as SwiperNavigation } from 'swiper/modules';
+import { ref } from 'vue';
+import SliderCard from '@/components/FeedbackSlider/SliderCard.vue';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+// import function to register Swiper custom elements
 
-new Swiper('.feedbackSlider', {
-  modules: [SwiperNavigation],
-  // spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  }
-});
+import { register } from 'swiper/element/bundle';
+register();
 
 // Define testimonials data
-// const testimonials = ref([
-//   {
-//     content:
-//       'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
-//     name: 'Mandy Oza',
-//     position: 'Xyz Company Ceo',
-//     avatar: new URL('@/assets/images/partner1.png', import.meta.url).href
-//   },
-//   {
-//     content:
-//       'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
-//     name: 'Jessica Lin',
-//     position: 'ABC Company Manager',
-//     avatar: new URL('@/assets/images/partner2.png', import.meta.url).href
-//   },
-//   {
-//     content:
-//       'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
-//     name: 'David Chen',
-//     position: 'DEF Company Director',
-//     avatar: new URL('@/assets/images/partner3.png', import.meta.url).href
-//   },
-//   {
-//     content:
-//       'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
-//     name: 'Sarah Wang',
-//     position: 'GHI Company Founder',
-//     avatar: new URL('@/assets/images/partner4.png', import.meta.url).href
-//   },
-//   {
-//     content:
-//       'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
-//     name: 'Michael Huang',
-//     position: 'JKL Organization Head',
-//     avatar: new URL('@/assets/images/partner5.png', import.meta.url).href
-//   }
+const feedback = ref([
+  {
+    id: 1,
+    name: 'Mandy Oza',
+    position: 'Xyz Company Ceo',
+    avatar: new URL('@/assets/images/partner1.png', import.meta.url).href
+  },
+  {
+    id: 2,
+    name: 'Jessica Lin',
+    position: 'Xyz Company Ceo',
+    avatar: new URL('@/assets/images/partner2.png', import.meta.url).href
+  },
+  {
+    id: 3,
+    name: 'David Chen',
+    position: 'Xyz Company Ceo',
+    avatar: new URL('@/assets/images/partner3.png', import.meta.url).href
+  },
+  {
+    id: 4,
+    name: 'Sarah Wang',
+    position: 'Xyz Company Ceo',
+    avatar: new URL('@/assets/images/partner4.png', import.meta.url).href
+  },
+  {
+    id: 5,
+    name: 'Michael Huang',
+    position: 'Xyz Company Ceo',
+    avatar: new URL('@/assets/images/partner5.png', import.meta.url).href
+  }
+]);
+
+// Define marquee images
+// const marqueeImages = ref([
+//   new URL('@/assets/images/icon/agent-logo.png', import.meta.url).href,
+//   new URL('@/assets/images/icon/agent-logo.png', import.meta.url).href
 // ]);
 </script>
+
+<style lang="scss">
+@use '@/styles/layout/_feedback.scss';
+</style>

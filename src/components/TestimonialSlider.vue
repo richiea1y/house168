@@ -102,36 +102,26 @@ import 'swiper/css/pagination';
 // Define testimonials data
 const testimonials = ref([
   {
-    content:
-      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
     name: 'Mandy Oza',
     position: 'Xyz Company Ceo',
     avatar: new URL('@/assets/images/partner1.png', import.meta.url).href
   },
   {
-    content:
-      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
     name: 'Jessica Lin',
     position: 'ABC Company Manager',
     avatar: new URL('@/assets/images/partner2.png', import.meta.url).href
   },
   {
-    content:
-      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
     name: 'David Chen',
     position: 'DEF Company Director',
     avatar: new URL('@/assets/images/partner3.png', import.meta.url).href
   },
   {
-    content:
-      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
     name: 'Sarah Wang',
     position: 'GHI Company Founder',
     avatar: new URL('@/assets/images/partner4.png', import.meta.url).href
   },
   {
-    content:
-      'Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua',
     name: 'Michael Huang',
     position: 'JKL Organization Head',
     avatar: new URL('@/assets/images/partner5.png', import.meta.url).href

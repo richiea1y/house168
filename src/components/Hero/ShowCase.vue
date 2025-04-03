@@ -27,13 +27,13 @@
 // max-width: 500px;
 
 .showcase__before {
-  @include mixins.showcase-container('before');
   z-index: 1;
+  @include mixins.showcase-container('before');
 }
 
 .showcase__after {
-  @include mixins.showcase-container('after');
   z-index: 2;
   margin-top: -4em;
+  @include mixins.showcase-container('after');
 }
 </style>
