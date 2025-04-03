@@ -9,10 +9,14 @@
       <swiper-container
         :navigation="{
           nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'swiper-button-disabled'
         }"
         slides-per-view="auto"
         centerInsufficientSlides="true"
+        :loop="false"
+        :allow-touch-move="true"
+        :watch-slides-progress="true"
       >
         <SliderCard v-for="item in feedback" :key="item.id" :feedback="item" />
       </swiper-container>
@@ -113,5 +117,11 @@ const marqueeImages = ref([
     border-radius: 0 !important;
     box-shadow: none !important;
   }
+}
+
+.swiper-button-disabled {
+  opacity: 1 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
 }
 </style>
