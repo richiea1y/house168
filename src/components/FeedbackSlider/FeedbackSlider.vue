@@ -6,7 +6,12 @@
 
     <div class="slider__container">
       <!-- Slider main container -->
-      <swiper-container navigation="true">
+      <swiper-container
+        :navigation="{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }"
+      >
         <SliderCard v-for="item in feedback" :key="item.id" :feedback="item" />
       </swiper-container>
     </div>
@@ -41,9 +46,9 @@ avatar
 <script setup>
 import { ref } from 'vue';
 import SliderCard from '@/components/FeedbackSlider/SliderCard.vue';
+import 'swiper/swiper-bundle.css'; // import Swiper styles
 
 // import function to register Swiper custom elements
-
 import { register } from 'swiper/element/bundle';
 register();
 
